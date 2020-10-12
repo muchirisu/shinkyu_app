@@ -1,0 +1,16 @@
+<div class="main prousers-new">
+  <div class="container">
+    <div class="form-head">新規ユーザー登録</div>
+    <div class="form prousers-form">
+      <div class="form-body">
+        <%= form_tag("/prousers/create") do %>
+          <p>ユーザー名</p>
+          <input name="name" value="<%= @prouser.name %>">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @prouser.email %>">
+          <input type="submit" value="新規登録">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="main prousers-index">
+  <div class="container">
+    <h1 class="prousers-head">鍼灸師さん一覧</h1>
+      <%= @prousers.each do |prouser| %>
+      <div class="prousers-index-item">
+        <%= link_to(prouser.name, "/prousers/#{prouser.id}") %>
+        <div class="prouser-right">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

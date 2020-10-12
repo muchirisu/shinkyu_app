@@ -11,6 +11,47 @@
 
   <body>
   <div class="cantainer">
+  <header>
+  <div class="header-logo">
+    <a href="/">鍼灸APP</a>
+  </div>
+  <ul class="header-menus">
+    <div class="header-menus-item">
+      <li >マイページ</li>
+    </div>
+    <div class="header-menus-item">
+      <li>ブックマーク一覧</li>
+    </div>
+    <div class="header-menus-item">
+      <li>ログイン・ログアウト</li>
+    </div>
+    <div class="header-menus-item">
+      <li>
+        <%= link_to("投稿一覧", "/posts/index") %>
+      </li>
+    </div>
+    <div class="header-menus-item">
+      <li>
+        <%= link_to("新規投稿", "/posts/new") %>
+      </li>
+    </div>
+    <div class="header-menus-item">
+      <li>
+        <%= link_to("鍼灸師さん一覧", "/prousers/index") %>
+      </li>
+    </div>
+    <div class="header-menus-item">
+      <li>
+        <%= link_to("新規登録", "/prousers/signup") %>
+      </li>
+    </div>
+  </ul>
+</header>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </div>
   </body>
