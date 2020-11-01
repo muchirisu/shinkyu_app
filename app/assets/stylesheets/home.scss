@@ -21,7 +21,7 @@ ul, li {
 a {
   text-decoration: none;
   color: #2d3133;
-  font-size: 14px;
+  // font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -56,12 +56,15 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  width: 100%;
+  max-width: 600px;
   margin: 60px auto;
   padding-left: 15px;
   padding-right: 15px;
   clear: both;
 }
+
+
 
 /* ヘッダー ================================ */
 header {
@@ -87,6 +90,8 @@ header {
 
 .header-menus-item {
   float: right;
+  display: block;
+  text-align: center;
   padding-right: 20px;
 }
 
@@ -96,11 +101,10 @@ header {
   font-size: 13px;
   color: white;
   padding-left: 15px;
-  display: block;
 }
 
 .header-menus-item a {
-  float: left;
+  // float: left;
   font-size: 13px;
   color: white;
   
@@ -133,6 +137,7 @@ header {
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
+  background-image: url("/top.jpg");
 }
 
 .top-message {
@@ -152,8 +157,15 @@ header {
 }
 
 .top-content {
-  margin-top: 100px;
+  margin-top: 60px;
 }
+
+.top-content li a {
+  color: white;
+}
+
+
+
 /* フォーム================================ */
 .form {
   max-width: 600px;
@@ -171,6 +183,10 @@ header {
 
 .form-body {
   padding: 30px;
+}
+
+.form-error {
+  color: #ff4d75;
 }
 
 .form input {
@@ -207,6 +223,8 @@ header {
   display: table;
   clear: both;
 }
+
+
 
 /* フラッシュ ================================ */
 .flash {

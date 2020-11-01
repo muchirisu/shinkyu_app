@@ -10,31 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_11_143211) do
+ActiveRecord::Schema.define(version: 2020_11_01_090138) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "prouser_id"
+    t.integer "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "content"
+    t.integer "prouser_id"
   end
 
   create_table "prousers", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
     t.date "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.string "password_digest"
+    t.string "prefecture"
+    t.string "image_identification"
+    t.string "adress"
+    t.string "access"
+    t.text "content", default: ""
+    t.text "salon_homepage"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
-    t.date "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "prefecture"
+    t.date "birthday"
+    t.string "image"
+    t.string "password_digest"
   end
 
 end

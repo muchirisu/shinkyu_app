@@ -17,11 +17,11 @@
   object-fit: cover;
 }
 
-.post-user-name a {
+.post-name a {
   font-weight: 600;
 }
 
-.post-user-name a:hover {
+.post-name a:hover {
   color: #3ecdc6;
 }
 
@@ -58,7 +58,7 @@
   object-fit: cover;
 }
 
-.posts-show-item .post-user-name a {
+.posts-show-item .post-name a {
   vertical-align: middle;
   font-size: 24px;
   margin-left: 15px;
@@ -96,4 +96,17 @@
 .posts-new textarea::-webkit-input-placeholder {
   font-size: 24px;
   opacity: 0.5;
+}
+
+.posts-show-item .fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+.like-btn {
+  color: #2DDB6D;
+}
+
+.like-btn-unlike {
+  color: #D9D9D9
 }

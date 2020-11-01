@@ -1,8 +1,31 @@
 <div class="main prouser-show">
   <div class="container">
     <div class="prouser">
+      <img src="<%= "/prouser_images/#{@prouser.image}" %>">    
       <h2><%= @prouser.name %></h2>
-      <p><%= @prouser.email %></p>
+      <% if @current_prouser && @prouser.id == @current_prouser.id %>
+        <%= link_to("ユーザー情報編集", "/prousers/#{@prouser.id}/edit") %>
+      <% end %>
     </div>
+
+    <ul class="prouser-tabs">
+      <li class="active"><%= link_to("投稿", "/prousers/#{@prouser.id}") %></li>
+      <li><%= link_to("いいね!", "/prousers/#{@prouser.id}/likes") %></li>
+      <li><%= link_to("プロフィール", "/prousers/#{@prouser.id}/profile") %></li>
+    </ul>
+
+    <% @prouser.posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/prouser_images/#{post.prouser.image}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-prouser-name">
+            <%= link_to(post.prouser.name, "/prousers/#{post.prouser.id}") %>
+          </div>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

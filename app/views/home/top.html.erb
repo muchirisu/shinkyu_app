@@ -6,12 +6,16 @@
 
   <div class="top-content">
     <ul>
-      <li class="singnin">
-        ログイン
+      <li class="singin">
+        <%= link_to("鍼灸師さんログイン", "/prousers/login") %>
+        <br>
+        <%= link_to("ユーザーログイン", "/users/login") %>
       </li>
         <p> or</p>
       <li class="signup">
-        新規登録
+        <%= link_to("鍼灸師さんはこちらから新規登録", "/prousers/signup") %>
+        <br>
+        <%= link_to("ユーザー新規登録", "/users/signup") %>
       </li>
     </ul>
   </div>

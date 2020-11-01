@@ -1,16 +1,17 @@
 <div class=" main posts-index">
   <div class="container">
+    <h1 class="form-head">投稿一覧</h1>
     <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <div class="posts-ProUser-image">
-
+        <div class="post-left">
+          <img src="<%= "/prouser_images/#{post.prouser.image}" %>">
         </div>
-        <div class="posts-ProUser-name">
-
-        </div>
-        <div class="posts-ProUser-content">
+        <div class="post-right">
+          <div class="post-prouser-name">
+            <%= link_to(post.prouser.name, "/prousers/#{post.prouser.id}") %>
+          </div>
           <%= link_to(post.content, "/posts/#{post.id}") %>
-        </div>
+        </div> 
       </div>
     <% end %>
   </div>
