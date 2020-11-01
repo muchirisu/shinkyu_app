@@ -1,0 +1,2 @@
+module ProUserHelper
+end

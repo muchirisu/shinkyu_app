@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShinkyuApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+  <div class="cantainer">
+  <header>
+  <div class="header-logo">
+    <a href="/">鍼灸APP</a>
+  </div>
+
+    <ul class="header-menus-item">
+      <%# 鍼灸師さん（prouser）がログインしているとき %>
+      <% if @current_prouser || @current_user %> 
+        <ul>
+          <% if @current_prouser %>
+            <li><%= link_to("鍼灸師さんマイページ", "/prousers/#{@current_prouser.id}") %></li>
+            <li><%= link_to("ログアウト", "/prousers/logout",  {method: :post}) %></li>
+            <li><%= link_to("新規投稿", "/posts/new") %></li>
+          <% end %>
+          <% if @current_user %>
+            <li><%= link_to("ユーザーマイページ", "/users/#{@current_user.id}") %></li>
+            <li><%= link_to("ログアウト", "/users/logout",  {method: :post}) %></li>
+          <% end %>
+            <li><%= link_to("鍼灸師さん一覧", "/prousers/index") %></li>
+            <li><%= link_to("投稿一覧", "/posts/index") %></li>
+        </ul>
+      <%# 鍼灸師さん（prouser）がログインしていないとき %>
+      <% else %>
+        <ul>
+            <li><%= link_to("鍼灸師さんログイン", "/prousers/login") %></li>
+            <li><%= link_to("鍼灸師さん新規登録", "/prousers/signup") %></li>
+            <li><%= link_to("ユーザーログイン", "/users/login") %></li>
+            <li><%= link_to("ユーザー新規登録", "/users/signup") %></li>
+        </ul>
+      <% end %>
+
+
+
+
+    </ul>
+  </header>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

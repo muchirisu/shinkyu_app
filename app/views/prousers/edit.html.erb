@@ -1,0 +1,25 @@
+<div class="main prousers-edit">
+  <div class="container">
+    <div class="form-head">ユーザー情報の編集</div>
+      <div class="form prousers-form">
+        <div class="form-body">
+          <%= form_tag("/prousers/#{@prouser.id}/update", {multipart: true}) do %>
+            <p>ユーザー名</p>
+            <input name="name" value="<%= @prouser.name %>">
+            <p>メールアドレス</p>
+            <input name="email" value="<%= @prouser.email %>">
+            <p>ユーザー画像</p>
+            <input name="image" type="file" value="<%= @prouser.image %>">
+            <p>一言</p>
+            <input name="content" placeholder="20文字以内で入力してください" value="<%= @prouser.content %>">
+            <p>住所</p>
+            <input name="adress" value="<%= @prouser.adress %>">
+            <p>アクセス</p>
+            <input name="access" placeholder="例）○○駅から徒歩5分" value="<%= @prouser.access%>">
+            <input type="submit" value="保存">
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

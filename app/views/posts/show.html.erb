@@ -1,0 +1,51 @@
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="post-name">
+        <img src = "<%= "/prouser_images/#{@prouser.image}" %>">
+        <%= link_to(@prouser.name, "/prousers/#{@prouser.id}")%>
+      </div>
+      <p>
+        <%= @post.content %>
+      </p>
+    
+      <div class="post-time">
+        <%= @post.created_at %>
+      </div>
+
+      <% if @current_prouser %>
+        <% if Like.find_by(prouser_id: @current_prouser.id, post_id: @post.id) %>
+          <%= link_to( "/likes/#{@post.id}/prouser_destroy", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn"></span>
+          <% end %>
+        <% else %>
+          <%= link_to("/likes/#{@post.id}/prouser_create", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% if @current_user %>
+        <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+          <%= link_to( "/likes/#{@post.id}/user_destroy", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn"></span>
+          <% end %>
+        <% else %>
+          <%= link_to("/likes/#{@post.id}/user_create", {method: "post"}) do %>
+          <span class="fa fa-heart like-btn-unlike"></span>
+          <% end %>
+        <% end %>
+      <% end %>
+
+
+
+      <% if @current_prouser && @prouser.id == @current_prouser.id %>
+        <div class="post-menus">
+          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+          <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"})%>
+        </div>
+      <% end %>
+      <%= @likes_count %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="main prousers-index">
+  <div class="container">
+    <h1 class="prousers-head">鍼灸師さん一覧</h1>
+      <% @prousers.each do |prouser| %>
+      <div class="prousers-index-item">
+        <div class="prouser-left">
+          <img src="<%= "/prouser_images/#{prouser.image}" %>">
+        </div>
+        <div class="prouser-right">
+          <div class="prouser-right-name">
+            <%= link_to(prouser.name, "/prousers/#{prouser.id}") %>
+          </div>
+          <div class="prouser-right-content">
+            <%= link_to(prouser.content, "/prousers/#{prouser.id}") %>
+          </div>
+          <div class="profile-menus">
+            <p>ハート</p>
+            <p>コメント</p>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
