@@ -11,6 +11,7 @@ class LikesController < ApplicationController
     redirect_to("/posts/#{params[:post_id]}")
   end
 
+
   def prouser_create
     @like = Like.new(
       prouser_id: @current_prouser.id,

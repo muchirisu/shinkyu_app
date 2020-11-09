@@ -3,8 +3,10 @@
     <div class="prouser">
       <img src="<%= "/prouser_images/#{@prouser.image}" %>">
       <h2><%= @prouser.name %></h2>
-      <% if @prouser.id == @current_prouser.id %>
-        <%= link_to("編集", "/prousers/#{@prouser.id}/edit") %>
+      <% if !@current_prouser.nil? %>
+        <% if @prouser.id == @current_prouser.id %>
+          <%= link_to("編集", "/prousers/#{@prouser.id}/edit") %>
+        <% end %>
       <% end %>
     </div>
     

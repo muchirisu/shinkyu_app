@@ -13,8 +13,8 @@ class PostsController < ApplicationController
     @prouser = @post.prouser
     # @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
-    @comments = Comment.all.order(created_at: :desc)
-    
+    @comments = Comment.where(post_id: @post.id).order(created_at: :desc)
+
     
 
   end

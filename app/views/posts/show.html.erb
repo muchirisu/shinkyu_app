@@ -47,69 +47,86 @@
         </div>
       <% end %>
       <%= @likes_count %>
+    
+
+
+      <% if @current_prouser %>
+        <div class="container">
+          <% @comments.each do |comment| %>
+            <div class="posts-index-item-comment">
+              <div class="post-left-comment">
+              <% if !comment.user.nil? %>
+                <img src="<%= "/user_images/#{comment.user.image}" %>">
+              <% end %>
+              <% if !comment.prouser.nil? %>
+                <img src="<%= "/prouser_images/#{comment.prouser.image}" %>">
+              <% end %>
+              </div>
+              <div class="post-right-comment">
+                <div class="post-prouser-name-comment">
+                <% if !comment.prouser.nil? %>
+                  <%= link_to(comment.prouser.name, "/prousers/#{comment.prouser.id}") %>
+                <% end %>
+                <% if !comment.user.nil? %>
+                  <%= link_to(comment.user.name, "/prousers/#{comment.user.id}") %>
+                <% end %>
+                </div>
+                <%= link_to(comment.comment_content, "/posts/#{comment.id}") %>
+              </div> 
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if @current_user %>
+        <div class="container-comment">
+          <% @comments.each do |comment| %>
+            <div class="posts-index-item-comment">
+              <div class="post-left">
+              <% if !comment.user.nil? %>
+                <img src="<%= "/user_images/#{comment.user.image}" %>">
+              <% end %>
+              <% if !comment.prouser.nil? %>
+                <img src="<%= "/prouser_images/#{comment.prouser.image}" %>">
+              <% end %>
+              </div>
+              <div class="post-right-comment">
+                <div class="post-user-name-comment">
+                <% if !comment.user.nil? %>
+                  <%= link_to(comment.user.name, "/users/#{comment.user.id}") %>
+                <% end %>
+                <% if !comment.prouser.nil? %>
+                  <%= link_to(comment.prouser.name, "/prousers/#{comment.prouser.id}") %>
+                <% end %>
+                </div>
+                <%= link_to(comment.comment_content, "/posts/#{comment.id}") %>
+              </div> 
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  
+      <% if @current_prouser %>
+        <%= form_tag("/comments/#{@post.id}/prouser_create") do %>
+          <div class="form">
+            <div class="form-body">
+              <textarea name="comment_content" placeholder="200文字以内で入力してください"></textarea>
+              <input type="submit" value="投稿">
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      
+      <% if @current_user %>
+        <%= form_tag("/comments/#{@post.id}/user_create") do %>
+          <div class="form">
+            <div class="form-body">
+              <textarea name="comment_content" placeholder="200文字以内で入力してください"></textarea>
+              <input type="submit" value="投稿">
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
-
-
-    <% if @current_prouser %>
-      <% @comments.each do |comment| %>
-        <div class="posts-index-item">
-          <div class="post-left">
-            <img src="<%= "/prouser_images/#{comment.prouser.image}" %>">
-          </div>
-          <div class="post-right">
-            <div class="post-prouser-name">
-              <%= link_to(comment.prouser.name, "/prousers/#{comment.prouser.id}") %>
-            </div>
-            <%= link_to(comment.comment_content, "/posts/#{comment.id}") %>
-          </div> 
-        </div>
-      <% end %>
-    <% end %>
-
-    <% if @current_user %>
-      <% @comments.each do |comment| %>
-        <div class="posts-index-item">
-          <div class="post-left">
-            <img src="<%= "/user_images/#{comment.user.image}" %>">
-          </div>
-          <div class="post-right">
-            <div class="post-user-name">
-              <%= link_to(comment.user.name, "/users/#{comment.user.id}") %>
-            </div>
-            <%= link_to(comment.comment_content, "/posts/#{comment.id}") %>
-          </div> 
-        </div>
-      <% end %>
-    <% end %>
-  
-    
-
-      
-
-    
-  
-
-  
-    <% if @current_prouser %>
-      <%= form_tag("/comments/#{@post.id}/prouser_create") do %>
-        <div class="form">
-          <div class="form-body">
-            <textarea name="comment_content" placeholder="200文字以内で入力してください"></textarea>
-            <input type="submit" value="投稿">
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-    
-    <% if @current_user %>
-      <%= form_tag("/comments/#{@post.id}/user_create") do %>
-        <div class="form">
-          <div class="form-body">
-            <textarea name="comment_content" placeholder="200文字以内で入力してください"></textarea>
-            <input type="submit" value="投稿">
-          </div>
-        </div>
-      <% end %>
-    <% end %>
 </div>
