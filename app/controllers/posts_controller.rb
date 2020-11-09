@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_prouser, {only: [:edit, :update, :destroy]}
   before_action :authenticate_user, {only: [:edit, :update, :destroy]}
   before_action :ensure_correct_prouser, {only: [:edit, :update, :destroy]}
-  before_action :ensure_correct_prouser, {only: [:edit, :update, :destroy]}
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     @prouser = @post.prouser
     # @user = @post.user
     @likes_count = Like.where(post_id: @post.id).count
+    @comments = Comment.all.order(created_at: :desc)
+    
+    
+
   end
 
   def new

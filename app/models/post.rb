@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+
+  has_many :comments, dependent: :destroy
+  
   validates :content, {length: {maximum: 200}, presence: true}
   validates :prouser_id, {presence: true}
 

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
+  post "comments/:post_id/user_create" => "comments#user_create"
+  post "comments/:post_id/prouser_create" => "comments#prouser_create"
+
+  # get 'users/show'
   # いいねのページ
   post "likes/:post_id/user_create" => "likes#user_create"
   post "likes/:post_id/prouser_create" => "likes#prouser_create"
@@ -52,4 +55,5 @@ Rails.application.routes.draw do
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
   get "/" => "home#top"
+
 end

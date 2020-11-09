@@ -10,48 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_01_090138) do
+ActiveRecord::Schema.define(version: 2020_11_08_100802) do
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "prouser_id"
-    t.integer "post_id"
+  create_table "comments", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "prouser_id"
+    t.integer "post_id"
+    t.text "comment_content"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "prouser_id"
+    t.integer "post_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "content"
+    t.integer "user_id"
     t.integer "prouser_id"
+    t.text "content"
   end
 
   create_table "prousers", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "email"
     t.date "birthday"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "image"
-    t.string "password_digest"
     t.string "prefecture"
     t.string "image_identification"
-    t.string "adress"
     t.string "access"
-    t.text "content", default: ""
+    t.text "content"
     t.text "salon_homepage"
+    t.string "password_digest"
+    t.string "address"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "prefecture"
+    t.string "name"
+    t.string "email"
     t.date "birthday"
     t.string "image"
+    t.string "prefecture"
     t.string "password_digest"
   end
 
