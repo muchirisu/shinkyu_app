@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ShinkyuApp</title>
+    <title>鍼灸師さんとのマッチングアプリ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,11 +15,10 @@
   <div class="cantainer">
   <header>
   <div class="header-logo">
-    <a href="/">鍼灸APP</a>
+    <a href="/">NeedLee</a>
   </div>
 
     <ul class="header-menus-item">
-      <%# 鍼灸師さん（prouser）がログインしているとき %>
       <% if @current_prouser || @current_user %> 
         <ul>
           <% if @current_prouser %>

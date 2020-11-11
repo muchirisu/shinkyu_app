@@ -21,7 +21,6 @@ ul, li {
 a {
   text-decoration: none;
   color: #2d3133;
-  // font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -41,7 +40,7 @@ form input[type="submit"] {
 /* 共通レイアウト ================================ */
 body {
   color: #2d3133;
-  background-color: #80E089;
+  background-color: #F58B3B;
   margin: 0;
   min-height: 1vh;
 }
@@ -52,7 +51,7 @@ body {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: #BFF5BC;
+  background-color:#FAE393;
 }
 
 .container {
@@ -68,7 +67,7 @@ body {
 
 /* ヘッダー ================================ */
 header {
-  background-color: #80E089;
+  background-color: #F58B3B;
   height: 64px;
   position: absolute;
   z-index: 1;
@@ -133,7 +132,7 @@ header {
   height: auto;
   min-height: 100%;
   color: white;
-  background-color: #BFF5BC;
+  background-color:#FAE393;
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
@@ -145,7 +144,7 @@ header {
 }
 
 .top-main h2 {
-  font-size: 70px;
+  font-size: 72px;
   font-weight: 500;
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
@@ -157,14 +156,21 @@ header {
 }
 
 .top-content {
-  margin-top: 60px;
+  margin-top: 100px;
 }
+.top-content p {
+  font-size: 16px;
+}
+
 
 .top-content li a {
   color: white;
+  font-size: 16px;
 }
 
-
+.signin a:hover {
+  color: #3ecdc6;
+}
 
 /* フォーム================================ */
 .form {
@@ -178,7 +184,7 @@ header {
   font-weight: 300;
   margin: 60px 0 20px;
   font-size: 48px;
-  color: #ADDEA0;
+  color: #F58B3B;
 }
 
 .form-body {
@@ -207,7 +213,7 @@ header {
 }
 
 .form input[type="submit"] {
-  background-color: #80E089;
+  background-color: #F58B3B;
   color: white;
   cursor: pointer;
   font-weight: 300;
@@ -230,7 +236,7 @@ header {
 .flash {
   padding: 10px 0;
   color: white;
-  background:#ADDEA0;
+  background:#FAE393;
   text-align: center;
   position: absolute;
   top: 64px;

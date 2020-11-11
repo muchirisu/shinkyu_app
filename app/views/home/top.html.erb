@@ -1,22 +1,36 @@
 <div class="main top-main">
   <div class="top-message">
-    <h2>鍼灸師のAPP ですーーーーーーー</h2>
-    <p>aaaaaaaaaaaaa</p>
+    <h2>NeedLee</h2>
+    <p>鍼灸マッチングAPP</p>
+    <p>お気に入りの鍼灸師さんが見つかる</p>
   </div>
 
   <div class="top-content">
-    <ul>
-      <li class="singin">
-        <%= link_to("鍼灸師さんログイン", "/prousers/login") %>
-        <br>
-        <%= link_to("ユーザーログイン", "/users/login") %>
+    <ul class="signin signup">
+      <li class="user">
+        <a>
+          <%= link_to("ユーザーログイン", "/users/login") %>
+        </a>
+          <br>
+        <a>
+          <%= link_to("ユーザー新規登録", "/users/signup") %>
+        </a>
       </li>
-        <p> or</p>
-      <li class="signup">
-        <%= link_to("鍼灸師さんはこちらから新規登録", "/prousers/signup") %>
-        <br>
-        <%= link_to("ユーザー新規登録", "/users/signup") %>
+          <p> or</p>
+
+          <p>▶︎鍼灸師さんはこちら</p>
+      <li class="prouser">
+        <a>
+          <%= link_to("鍼灸師さんログイン", "/prousers/login") %>
+        </a>
+          <br>
+        <a>
+          <%= link_to("鍼灸師さん新規登録", "/prousers/signup") %>
+        </a>
       </li>
     </ul>
+
+    
+
   </div>
 </div>
