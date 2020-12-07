@@ -1,0 +1,74 @@
+<div class="main newposts-show">
+  <div class="container">
+    <div class="newposts-show-item">
+      <div class="newpost-name">
+        <img src = "<%= "/newuser_images/#{@newuser.image}" %>">
+        <%= link_to(@newuser.name, "/newusers/#{@newuser.id}")%>
+      </div>
+      <p>
+        <%= @newpost.content %>
+      </p>
+    
+      <div class="newpost-time">
+        <%= @newpost.created_at %>
+      </div>
+      <% if Newlike.find_by(user_id: @current_newuser.id, post_id: @newpost.id) %>
+          <%= link_to( "/newlikes/#{@newpost.id}/destroy", {method: "post"}) do %>
+          <span class="fa fa-heart newlike-btn"></span>
+          <% end %>
+        <% else %>
+          <%= link_to("/newlikes/#{@newpost.id}/create", {method: "post"}) do %>
+          <span class="fa fa-heart newlike-btn-unlike"></span>
+          <% end %>
+      <% end %>
+
+      <%= @newlikes_count %>
+      
+
+      <% if @current_newuser && @current_newuser.user_type==2 %>
+        <div class="newpost-menus">
+          <%= link_to("編集", "/newposts/#{@newpost.id}/edit") %>
+          <%= link_to("削除", "/newposts/#{@newpost.id}/destroy", {method: "post"})%>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+  <div class="newcomment-index">
+    <div class="container">
+      <% @newcomments.each do |newcomment| %>
+        <div class="newposts-index-item-newcomment">
+          <div class="newpost-left-newcomment">
+          <%# <% if !newcomment.newuser.nil? %> 
+            <img src="<%= "/newuser_images/#{newcomment.newuser.image}" %>">
+          
+          </div>
+          <div class="newpost-right-newcomment">
+            <div class="newpost-newuser-name-newcomment">
+            <%# <% if !newcomment.newuser.nil? %> 
+              <%= link_to(newcomment.newuser.name, "/newusers/#{newcomment.newuser.id}") %>
+            </div>
+            <%= link_to(newcomment.content, "/newposts/#{newcomment.id}") %>
+          </div> 
+          
+          <% if !@current_newuser.nil? && @current_newuser.user_type==2 %>
+            <div class="newcomment-menus">
+              <%= link_to("削除", "/newcomments/#{@newpost.id}/destroy", {method: "post"})%>
+            </div>
+          <% end %> 
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<div class="newcomment-create">
+  <div class="container">
+    <%= form_tag("/newcomments/#{@newpost.id}/create") do %>
+      <div class="form">
+        <div class="form-body">
+          <textarea name="content" placeholder="200文字以内で入力してください"></textarea>
+          <input type="submit" value="投稿">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

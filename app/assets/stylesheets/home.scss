@@ -139,16 +139,16 @@ header {
   background-image: url("/top.jpg");
 }
 
-.top-container {
-  display: flex;
-  justify-content:center; /* 水平方向 */
-  align-items: center; /* 垂直方向 */
-}
+// .top-container {
+//   display: flex;
+//   justify-content:center; /* 水平方向 */
+//   align-items: center; /* 垂直方向 */
+// }
 
-.top-container img {
-  width: 100px;
-  height: auto;
-}
+// .top-container img {
+//   width: 100px;
+//   height: auto;
+// }
 
 .top-message {
   position: relative;

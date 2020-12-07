@@ -15,36 +15,30 @@
   <div class="cantainer">
   <header>
   <div class="header-logo">
-    <a href="/">NeedLee</a>
-  </div>
+      <% if @current_newuser %>
+          <%= link_to("NeedLee", "/newposts/index") %>
+        <% else %>
+          <%= link_to("NeedLee", "/") %>
+        <% end %>
+      </div>
 
     <ul class="header-menus-item">
-      <% if @current_prouser || @current_user %> 
-        <ul>
-          <% if @current_prouser %>
-            <li><%= link_to("鍼灸師さんマイページ", "/prousers/#{@current_prouser.id}") %></li>
-            <li><%= link_to("ログアウト", "/prousers/logout",  {method: :post}) %></li>
-            <li><%= link_to("新規投稿", "/posts/new") %></li>
-          <% end %>
-          <% if @current_user %>
-            <li><%= link_to("ユーザーマイページ", "/users/#{@current_user.id}") %></li>
-            <li><%= link_to("ログアウト", "/users/logout",  {method: :post}) %></li>
-          <% end %>
-            <li><%= link_to("鍼灸師さん一覧", "/prousers/index") %></li>
-            <li><%= link_to("投稿一覧", "/posts/index") %></li>
-        </ul>
-      <%# 鍼灸師さん（prouser）がログインしていないとき %>
-      <% else %>
-        <ul>
-            <li><%= link_to("鍼灸師さんログイン", "/prousers/login") %></li>
-            <li><%= link_to("鍼灸師さん新規登録", "/prousers/signup") %></li>
-            <li><%= link_to("ユーザーログイン", "/users/login") %></li>
-            <li><%= link_to("ユーザー新規登録", "/users/signup") %></li>
-        </ul>
+      <% if !@current_newuser.nil? %>
+        <li><%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}") %></li>
       <% end %>
-
-
-
+        
+      <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
+        <li><%= link_to("new新規投稿ページ", "/newposts/new") %></li>
+      <% end %>
+      <% if @current_newuser.nil? %> 
+        <li><%= link_to("new新規ユーザー登録", "/newusers/signup") %></li>
+        <li><%= link_to("newログイン", "/newusers/login") %></li>
+      <% end %>
+      <% if !@current_newuser.nil? %>
+        <li><%= link_to("new鍼灸師さん一覧ページ", "/newusers/index") %></li>
+        <li><%= link_to("new投稿一覧ページ", "/newposts/index") %></li>
+        <li><%= link_to("newログアウト", "/newusers/logout", {method: :post}) %></li>
+      <% end %>
 
     </ul>
   </header>

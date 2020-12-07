@@ -1,40 +1,22 @@
 <div class="main top-main">
-  <div class="top-container">
-    <img src="toppage/doctor.png">
-    <div class="top-message">
-      <h2>NeedLee</h2>
-      <p>鍼灸マッチングAPP</p>
-      <p>お気に入りの鍼灸師さんが見つかる</p>
-    </div>
-    <img src="toppage/girl.png">
+  <div class="top-message">
+    <h2>NeedLee</h2>
+    <p>鍼灸マッチングAPP</p>
+    <p>お気に入りの鍼灸師さんが見つかる</p>
   </div>
-
   <div class="top-content">
     <ul class="signin signup">
-      <li class="user">
+      <li class="newuser">
         <a>
-          <%= link_to("ユーザーログイン", "/users/login") %>
+          <%= link_to("ログイン", "/newusers/login") %>
         </a>
           <br>
-        <a>
-          <%= link_to("ユーザー新規登録", "/users/signup") %>
-        </a>
-      </li>
           <p> or</p>
-
-          <p>▶︎鍼灸師さんはこちら</p>
-      <li class="prouser">
-        <a>
-          <%= link_to("鍼灸師さんログイン", "/prousers/login") %>
-        </a>
           <br>
         <a>
-          <%= link_to("鍼灸師さん新規登録", "/prousers/signup") %>
+          <%= link_to("ユーザー新規登録", "/newusers/signup") %>
         </a>
       </li>
     </ul>
-
-    
-
   </div>
 </div>

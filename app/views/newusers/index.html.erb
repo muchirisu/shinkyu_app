@@ -1,0 +1,25 @@
+<div class="main newusers-index">
+  <div class="container">
+    <h1 class="newusers-head">new鍼灸師さん一覧</h1>
+      <% @newusers.each do |newuser| %>
+      <div class="newusers-index-item">
+        <div class="newuser-left">
+          <img src="<%= "/newuser_images/#{newuser.image}" %>">
+        </div>
+        <div class="newuser-right">
+          <div class="newuser-right-name">
+            <%= link_to(newuser.name, "/newusers/#{newuser.id}") %>
+          </div>
+          <div class="newuser-right-content">
+            <%= link_to(newuser.content, "/newusers/#{newuser.id}") %>
+          </div>
+          <div class="newprofile-menus">
+            <p>ハート</p>
+            <p>コメント</p>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>

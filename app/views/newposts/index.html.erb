@@ -1,0 +1,18 @@
+<div class=" main newposts-index">
+  <div class="container">
+    <h1 class="form-head">投稿一覧</h1>
+    <% @newposts.each do |newpost| %>
+      <div class="newposts-index-item">
+        <div class="newpost-left">
+          <img src="<%= "/newuser_images/#{newpost.newuser.image}" %>">
+        </div>
+        <div class="newpost-right">
+          <div class="newpost-newuser-name">
+            <%= link_to(newpost.newuser.name, "/newusers/#{newpost.newuser.id}") %>
+          </div>
+          <%= link_to(newpost.content, "/newposts/#{newpost.id}") %>
+        </div> 
+      </div>
+    <% end %>
+  </div>
+</div>

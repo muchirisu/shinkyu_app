@@ -1,0 +1,2 @@
+module NewlikesHelper
+end

@@ -1,0 +1,35 @@
+<div class="main newuser-show">
+  <div class="container">
+    <div class="newuser">
+      <img src="<%= "/newuser_images/#{@newuser.image}" %>">    
+      <h2><%= @newuser.name %></h2>
+      <%# ログインしているユーザーのみ編集できる %>
+      <% if !@current_newuser.nil? && @newuser.id == @current_newuser.id %>
+        <%= link_to("ユーザー情報編集", "/newusers/#{@newuser.id}/edit") %>
+      <% end %>
+    </div>
+
+    <ul class="newuser-tabs">
+      <% if !@current_newuser.nil? && @current_newuser.user_type==2 %>
+        <li class="active"><%= link_to("投稿", "/newusers/#{@newuser.id}") %></li>
+      <% end %>
+        <li><%= link_to("いいね!", "/newusers/#{@newuser.id}/likes") %></li>
+        <li><%= link_to("プロフィール", "/newusers/#{@newuser.id}/profile") %></li>
+    </ul>
+    <% if !@current_newuser.nil? && @current_newuser.id %>
+      <% @newuser.newposts.each do |newpost| %>
+        <div class="newposts-index-item">
+          <div class="newpost-left">
+            <img src="<%= "/newuser_images/#{newpost.newuser.image}" %>">
+          </div>
+          <div class="newpost-right">
+            <div class="newpost-name">
+              <%= link_to(newpost.newuser.name, "/newusers/#{newpost.newuser.id}") %>
+            </div>
+            <%= link_to(newpost.content, "/newposts/#{newpost.id}") %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
