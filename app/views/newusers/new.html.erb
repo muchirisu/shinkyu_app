@@ -5,7 +5,7 @@
         <div class="form-body">
           <%= form_tag("/newusers/create") do %>
             <p>ユーザータイプの選択</p>
-            <input type="radio" name="user_type" value=1 checked="checked">一般ユーザー
+            <input id="type-user" type="radio" name="user_type" value=1 checked="checked">一般ユーザー
             <input id="type-shinkyu" type="radio" name="user_type" value=2>鍼灸師の方
             <p>名前</p>
             <input name="name" value="<%= @newuser.name %>">
