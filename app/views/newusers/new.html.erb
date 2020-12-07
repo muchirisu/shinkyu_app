@@ -6,7 +6,7 @@
           <%= form_tag("/newusers/create") do %>
             <p>ユーザータイプの選択</p>
             <input type="radio" name="user_type" value=1 checked="checked">一般ユーザー
-            <input type="radio" name="user_type" value=2>鍼灸師の方
+            <input id="type-shinkyu" type="radio" name="user_type" value=2>鍼灸師の方
             <p>名前</p>
             <input name="name" value="<%= @newuser.name %>">
             <p>生年月日</p>
@@ -66,8 +66,17 @@
             
             <p>パスワード</p>
             <input name="password" type ="password" value="<%= @newuser.password %>">
+            <div id="hide-text">
+              <p>サロンホームページ</p>
+              <input name="salon_homepage" placeholder="サロンのホームページがありましたら、ご記載ください" value="<%= @newuser.salon_homepage%>">
+              <p>住所</p>
+              <input name="address" placeholder="例）○○県〇〇市〇〇-1" value="<%= @newuser.address %>">
+              <p>アクセス</p>
+              <input name="access" placeholder="例）○○駅から徒歩5分" value="<%= @newuser.access%>">
+            </div>
             <input type="submit" value="新規登録">
           <% end %>
+          
         </div>
       </div>
   </div>
