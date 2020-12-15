@@ -1,12 +1,10 @@
-<div class="main newuser-show">
+<div class="main newusers-show">
   <div class="container">
     <div class="newuser">
       <img src="<%= "/newuser_images/#{@newuser.image}" %>">
       <h2><%= @newuser.name %></h2>
-      <% if !@current_newuser.nil? %>
-        <% if @newuser.id == @current_newuser.id %>
-          <%= link_to("編集", "/newusers/#{@newuser.id}/edit") %>
-        <% end %>
+      <% if !@current_newuser.nil? && @newuser.id == @current_newuser.id %>
+        <%= link_to("ユーザー情報編集", "/newusers/#{@newuser.id}/edit") %>
       <% end %>
     </div>
     
@@ -16,7 +14,7 @@
       <li class="active"><%= link_to("プロフィール", "/newusers/#{@newuser.id}/profile") %></li>
     </ul>
     <div class="newposts-index-item">
-      <div class="newusers-profile">
+      <div class="newuser-profile">
         <ul>
           <li><%= @newuser.name %></li>
           <li><%= @newuser.content %></li>

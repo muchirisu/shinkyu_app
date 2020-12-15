@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>鍼灸師さんとのマッチングアプリ</title>
+    <%# 初期のズーム倍率1、最小倍率1、ズームの操作不可 %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>お気に入りの鍼灸師さんが見つかるマッチングアプリ | NeedLee</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,36 +14,37 @@
   </head>
 
   <body>
-  <div class="cantainer">
-  <header>
-  <div class="header-logo">
-      <% if @current_newuser %>
-          <%= link_to("NeedLee", "/newposts/index") %>
+  
+    <header>
+      
+      <div class="header-logo">
+        <% if @current_newuser %>
+            <%= link_to("NeedLee", "/newposts/index") %>
         <% else %>
-          <%= link_to("NeedLee", "/") %>
+            <%= link_to("NeedLee", "/") %>
         <% end %>
       </div>
 
-    <ul class="header-menus-item">
-      <% if !@current_newuser.nil? %>
-        <li><%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}") %></li>
-      <% end %>
-        
-      <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
-        <li><%= link_to("new新規投稿ページ", "/newposts/new") %></li>
-      <% end %>
-      <% if @current_newuser.nil? %> 
-        <li><%= link_to("new新規ユーザー登録", "/newusers/signup") %></li>
-        <li><%= link_to("newログイン", "/newusers/login") %></li>
-      <% end %>
-      <% if !@current_newuser.nil? %>
-        <li><%= link_to("new鍼灸師さん一覧ページ", "/newusers/index") %></li>
-        <li><%= link_to("new投稿一覧ページ", "/newposts/index") %></li>
-        <li><%= link_to("newログアウト", "/newusers/logout", {method: :post}) %></li>
-      <% end %>
+      <ul class="header-menus-item">
+        <% if !@current_newuser.nil? %>
+          <li><%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}") %></li>
+        <% end %>
+          
+        <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
+          <li><%= link_to("new新規投稿ページ", "/newposts/new") %></li>
+        <% end %>
+        <% if @current_newuser.nil? %> 
+          <li><%= link_to("new新規ユーザー登録", "/newusers/signup") %></li>
+          <li><%= link_to("newログイン", "/newusers/login") %></li>
+        <% end %>
+        <% if !@current_newuser.nil? %>
+          <li><%= link_to("new鍼灸師さん一覧ページ", "/newusers/index") %></li>
+          <li><%= link_to("new投稿一覧ページ", "/newposts/index") %></li>
+          <li><%= link_to("newログアウト", "/newusers/logout", {method: :post}) %></li>
+        <% end %>
 
-    </ul>
-  </header>
+      </ul>
+    </header>
     <% if flash[:notice] %>
       <div class="flash">
         <%= flash[:notice] %>

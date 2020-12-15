@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
 
   
-  # post "comments/:post_id/user_create" => "comments#user_create"
-  # post "comments/:post_id/prouser_create" => "comments#prouser_create"
-  post "newcomments/:post_id/create" => "newcomments#create"
-  post "newcomments/:post_id/destroy" => "newcomments#destroy"
+  
+
+ 
 
   # get 'users/show'
   # いいねのページ
   # post "likes/:post_id/user_create" => "likes#user_create"
   # post "likes/:post_id/prouser_create" => "likes#prouser_create"
-  post "newlikes/:post_id/create" => "newlikes#create"
-  
   # いいね削除のページ
   # post "likes/:post_id/user_destroy" => "likes#user_destroy"
   # post "likes/:post_id/prouser_destroy" => "likes#prouser_destroy"
+  post "newlikes/:post_id/create" => "newlikes#create"
   post "newlikes/:post_id/destroy" => "newlikes#destroy"
   
   
@@ -45,7 +43,6 @@ Rails.application.routes.draw do
   #編集したページのフォームデータを受け取るページ
   
   # ユーザー編集ページ
-  
   post "newusers/create" => "newusers#create"
   get "newusers/index" => "newusers#index"
   post "newusers/login" => "newusers#login"
@@ -55,9 +52,14 @@ Rails.application.routes.draw do
   get "newusers/:id" => "newusers#show"
   get "newusers/:id/edit" => "newusers#edit"
   post "newusers/:id/update" => "newusers#update"
-
   
-
+  # get "newusers/:id/comments" => "newusers#comments"
+  
+  get "newusers/:id/newprofile" => "newusers#profile"
+  get "newusers/:id/likes" => "newusers#likes"
+  
+  
+  
   
   
   # prousers===============
@@ -81,12 +83,11 @@ Rails.application.routes.draw do
   # get "prousers/:id/profile" => "prousers#profile"
   # post "prousers/:id/update_profile" => "prousers#update_profile"
 
-  # likes===============
+  # newlikes===============
   # get "prousers/:id/likes" => "prousers#likes"
   # get "users/:id/likes" => "users#likes"
-  get "newusers/:id/likes" => "newusers#likes"
-  get "newusers/:id/comments" => "newusers#comments"
-  get "newusers/:id/profile" => "newusers#profile"
+  
+  
   
 
 # newposts===============
@@ -107,5 +108,14 @@ Rails.application.routes.draw do
   # post "posts/:id/update" => "posts#update"
   # post "posts/:id/destroy" => "posts#destroy"
   get "/" => "home#top"
+
+# newcomments
+get "newcomments/index" => "newcomments#index"
+# get "newcomments/new" => "newcomments#new"
+post "newcomments/:post_id/create" => "newcomments#create"
+# get "newcomments/:post_id/edit" => "newcomments#edit"
+post "newcomments/:post_id/update" => "newcomments#update"
+post "newcomments/:post_id/destroy" => "newcomments#destroy"
+
 
 end

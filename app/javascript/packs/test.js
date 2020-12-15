@@ -4,7 +4,7 @@ $(function () {
   });
 
   $('#type-user').click(function () {
-    $('#hide-text').hide();
+    $('#hide-text').fadeOut();
   });
 
 

@@ -9,5 +9,8 @@ class Newpost < ApplicationRecord
   def newuser
     return Newuser.find_by(id: self.newuser_id)
   end
+  def newcomment
+    return Newcomment.find_by(id: self.newuser_id)
+  end
 
 end

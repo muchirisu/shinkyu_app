@@ -9,17 +9,14 @@ class NewusersController < ApplicationController
 
   def show
     @newuser = Newuser.find_by(id: params[:id])
-    
   end
   
   def new
     @newuser = Newuser.new
-    
   end
 
   def create
     @newuser = Newuser.new(user_type: params[:user_type], name: params[:name], email: params[:email], password: params[:password], birthday: params[:birthday], prefecture: params[:prefecture], image: "pc.jpg")
-
 
     if @newuser.save
       session[:user_id] = @newuser.id
@@ -31,7 +28,6 @@ class NewusersController < ApplicationController
     end
   end
 
-  
   def edit
     @newuser = Newuser.find_by(id: params[:id])
   end
@@ -58,10 +54,6 @@ class NewusersController < ApplicationController
       render("/newusers/edit")
     end
   end
-
-
-
-
 
   def login_form
   end
@@ -100,9 +92,7 @@ class NewusersController < ApplicationController
     @newuser = Newuser.find_by(id: params[:id])
   end
   
-  def update_profile
-  end
-
+  
 
   # ログイン中のユーザーのidと編集したいユーザーのidが等しいか判定
   def ensure_correct_newuser
