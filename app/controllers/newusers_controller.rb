@@ -62,8 +62,9 @@ class NewusersController < ApplicationController
     # ユーザが存在するかの条件分岐(emailとpasswordが入力されたかで判断)
     # @prouser = Prouser.find_by(email: params[:email], password: params[:password])
     # メールアドレスのみで、ユーザーを取得しif文の条件を&&とauthenticateメソッドを用いて書き換える
+    # password_digest: params[:password]をfind_byからはずす。
     @newuser = Newuser.find_by(email: params[:email])
-    if @newuser
+    if @newuser&& @newuser.authenticate(params[:password])
       session[:user_id] = @newuser.id
       flash[:notice]=" ログインしました"
       redirect_to("/newusers/index")
@@ -72,7 +73,7 @@ class NewusersController < ApplicationController
       @error_message = "メールアドレスまたはパスワードが間違えています"
       @email = params[:email]
       @password = params[:password]
-      render("prousers/login_form")
+      render("newusers/login_form")
     end
   end
 

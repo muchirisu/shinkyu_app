@@ -3,22 +3,15 @@
     <div class="top-message">
       <h2>NeedLee</h2>
       <p>鍼灸マッチングAPP</p>
-      <p>お気に入りの鍼灸師さんが見つかる</p>
+      <p>お気に入りの鍼灸師さんが見つかるアプリ</p>
     </div>
-    <div class="top-content">
-      <ul class="signin signup">
-        <li class="newuser">
-          <a>
-            <%= link_to("ログイン", "/newusers/login") %>
-          </a>
-            <br>
-            <p> or</p>
-            <br>
-          <a>
-            <%= link_to("ユーザー新規登録", "/newusers/signup") %>
-          </a>
-        </li>
-      </ul>
+    <div class="top-menus">
+      <li class="top-menu">
+        <%= link_to("新規ユーザー登録", "/newusers/signup", class: "signup") %>
+      </li>
+      <li class="top-menu">
+        <%= link_to("ログイン", "/newusers/login", class: "signin") %>
+      </li>
     </div>
   </div>
 </div>
