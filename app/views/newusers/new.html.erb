@@ -1,12 +1,13 @@
 <div class="main newusers-new">
   <div class="container">
-    <div class="form-head">新規ユーザー登録</div>
       <div class="form newusers-form">
         <div class="form-body">
           <%= form_tag("/newusers/create") do %>
-            <p>ユーザータイプの選択</p>
-            <input id="type-user" type="radio" name="user_type" value=1 checked="checked">一般ユーザー
-            <input id="type-shinkyu" type="radio" name="user_type" value=2>鍼灸師の方
+            <p class="type-user">ユーザータイプの選択</p>
+            <%# labelで囲うことで文字列をクリックして選択できるようになる。 %>
+            <label for="type-user" class="radio"><input id="type-user" type="radio" name="user_type" value=1 checked="checked" required>一般の方</label>
+            <label for="type-shinkyu" class="radio"><input id="type-shinkyu" type="radio" name="user_type" value=2>鍼灸師の方</label>
+            
             <p>名前</p>
             <input name="name" value="<%= @newuser.name %>">
             <p>生年月日</p>
@@ -64,7 +65,7 @@
               <option value="okinawa">沖縄県</option>
             </select>
             <p>パスワード</p>
-              <input name="password" type ="password" value="<%= @newuser.password %>">
+              <input name="password" type ="password"  placeholder="半角英数" value="<%= @newuser.password %>">
               <div id="hide-text">
                 <p>サロンホームページ</p>
                   <input name="salon_homepage" placeholder="サロンのホームページがありましたら、ご記載ください" value="<%= @newuser.salon_homepage%>">
