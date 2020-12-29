@@ -18,26 +18,31 @@
   height: 100%;
 }
 
-.newuser-left img {
-  width: 60px;
-  height: 60px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
-  object-fit: cover;
+
+.newuser-left {
+  width: 10%;
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin: 20px 0 10px;
+    object-fit: cover;
+  }
 }
 
 .newuser-name a {
   font-weight: 600;
+  &:hover {
+    color: #ffb6b2;
+  }
 }
 
-.newuser-name a:hover {
-  color: #ffb6b2;
-}
+// .newuser-name a:hover {
+//   color: #ffb6b2;
+// }
 
-.newuser-left {
-  width: 10%;
-}
+
 // 鍼灸師さん一覧の内容の部分
 .newuser-right {
   width: 90%;
@@ -62,67 +67,63 @@
 
 .newuser {
   margin-bottom: 20px;
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    margin: 20px 0 10px;
+    object-fit: cover;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  a {
+    color: #8899a6;
+    text-decoration: underline;
+    font-weight: 200;
+  }
+  span {
+    color: #afb6bf;
+    font-weight: 200;
+    padding: 0 6px 0 8px;
+  }
+
 }
 
-.newuser img {
-  width: 80px;
-  height: 80px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  margin: 20px 0 10px;
-  object-fit: cover;
-}
-
-.newuser h2 {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.newuser p {
-  font-size: 13px;
-  margin-bottom: 15px;
-}
-
-.newuser a {
-  color: #8899a6;
-  text-decoration: underline;
-  font-weight: 200;
-}
-
-.newuser span {
-  color: #afb6bf;
-  font-weight: 200;
-  padding: 0 6px 0 8px;
-}
 
 .newuser-tabs {
   margin-top: 40px;
   background-color: #F0A28F;
   overflow: hidden;
   box-shadow: 0 2px 6px #c1ced7;
+  li {
+    float: left;
+  }
+  a {
+    display: inline-block;
+    padding: 16px 24px;
+    color: #5F3F01;
+    // opacity: 0.5;
+  }
+  &:active {
+    border-bottom:#fffaf0;
+  }
 }
 
-.newuser-tabs li {
-  float: left;
-}
-
-.newuser-tabs li.active {
-  border-bottom:#fffaf0;
-}
 
 .newuser-tabs li.active a {
   color: #5F3F01;
   background-color: #fffaf0;
 }
 
-.newuser-tabs a {
-  display: inline-block;
-  padding: 16px 30px;
-  color: #5F3F01;
-  // opacity: 0.5;
-  
-}
+
 
 /* users/new, users/edit ================================ */
 .newusers-form input {
