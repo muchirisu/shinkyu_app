@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 /* reset ================================ */
+
+// レスポンシブの変数定義
+
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -295,16 +300,22 @@ html, body {
   letter-spacing: 2px;
 }
 
-.form input[type="submit"] {
+.form input {
     margin-top: 16px;
     width: 100%;
     display: inline-block;
     padding: 0.5em 1em;
     text-decoration: none;
-    background: #FFD6D4;/*ボタン色*/
-    color: #5F3F01;
-    border-bottom: solid 4px #F0A28F;
-    border-radius: 3px;
+    border-radius: 2px;
+}
+    input[type="submit"] {
+      background-color: #FFD6D4;/*ボタン色*/
+      color: #5F3F01;
+      border-bottom: solid 4px #F0A28F;
+      border-radius: 8px;
+      border-top: none;/* ボタンの上のボーダー */
+      border-right: none;/* ボタンの右のボーダー */
+      border-left: none;/* ボタンの左のボーダー */
   }
   .form input:active {
   /*ボタンを押したとき*/
@@ -314,16 +325,19 @@ html, body {
 }
 
 
-
 .type-user {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  // padding: 0;
+  // margin: 0;
 }
 
 .type-user-select-area {
   display: block;
   overflow: hidden;
+  // width: 200px;
+  // width: 40%;
 }
 
 .radio {
