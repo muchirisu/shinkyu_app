@@ -4,10 +4,11 @@
         <div class="form-body">
           <%= form_tag("/newusers/create") do %>
             <p class="type-user">ユーザータイプの選択</p>
+            <div class="type-user-select-area">
             <%# labelで囲うことで文字列をクリックして選択できるようになる。 %>
-            <label for="type-user" class="radio"><input id="type-user" type="radio" name="user_type" value=1 checked="checked" required>一般の方</label>
-            <label for="type-shinkyu" class="radio"><input id="type-shinkyu" type="radio" name="user_type" value=2>鍼灸師の方</label>
-            
+              <label for="type-user" class="radio"><input id="type-user" type="radio" name="user_type" value=1 checked="checked" required>一般の方</label>
+              <label for="type-shinkyu" class="radio"><input id="type-shinkyu" type="radio" name="user_type" value=2>鍼灸師の方</label>
+            </div>
             <p>名前</p>
             <input name="name" value="<%= @newuser.name %>">
             <p>生年月日</p>
