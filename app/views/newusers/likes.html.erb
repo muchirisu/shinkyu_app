@@ -14,7 +14,7 @@
         <li><%= link_to("投稿", "/newusers/#{@newuser.id}") %></li>
       <% end %>
         <li class="active"><%= link_to("いいね!", "/newusers/#{@newuser.id}/likes") %></li>
-        <li><%= link_to("プロフィール", "/newusers/#{@newuser.id}/newprofile") %></li>
+        <li><%= link_to("プロフィール", "/newusers/#{@newuser.id}/profile") %></li>
     </ul>
 
     <% @newlikes.each do |newlike| %>

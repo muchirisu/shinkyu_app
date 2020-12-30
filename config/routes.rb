@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   
   # get "newusers/:id/comments" => "newusers#comments"
   
-  get "newusers/:id/newprofile" => "newusers#profile"
+  get "newusers/:id/profile" => "newusers#profile"
   get "newusers/:id/likes" => "newusers#likes"
   
   
