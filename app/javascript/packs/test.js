@@ -8,7 +8,7 @@ $(function () {
   });
 
   $('.open').click(function () {
-    $('.l-header-nav__container').fadeIn(1000);
+    $('.header-nav__container').fadeIn(1000);
   });
   $('.open').click(function () {
     $('.close').show();
@@ -17,7 +17,7 @@ $(function () {
     $(this).hide();
   });
   $('.close').click(function () {
-    $('.l-header-nav__container').fadeOut(1000);
+    $('.header-nav__container').fadeOut(1000);
   });
   $('.close').click(function () {
     $('.open').show(1000);
