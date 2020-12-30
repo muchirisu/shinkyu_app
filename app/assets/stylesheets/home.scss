@@ -103,6 +103,7 @@ header {
   }
   .l-header-menu__list {
       display: flex;
+      margin-right: 16px
   }
 }
 
@@ -125,9 +126,9 @@ header {
   display: block;
   width: 100%;
   height: 100%;
-  margin-left: -10px;
   z-index: 5;
   opacity: 1;
+  margin-left: 24px;
   img {
     width: 100%;
     height: 100%;
@@ -139,10 +140,10 @@ header {
   display: block;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 16px;
+  margin: 8px;
   color: #F0A28F;
-  line-height: 66px;
-  transition: color .5s;
+  line-height: 24px;
 }
 
 .l-header-nav {
@@ -153,36 +154,23 @@ header {
   z-index: 5;
 }
 
+.close {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: 5;
+  top: 0px;
+  right: 0px;
+  display: none;
+}
+
 .l-header-nav-trigger {
   width: 100%;
   height: 100%;
 }
 
 
-// .l-header-nav__line {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   margin: auto;
-//   width: 20px;
-//   height: 2px;
-//   background-color: #F0A28F;
-// }
 
-// closeがついていない最初の状態はこれを適用
-// .l-header-nav__line:nth-child(1) {
-//   transform: translate(0, -6px);
-// }
-
-// .l-header-nav__line:nth-child(2) {
-//   transform: translate(0, 0);
-// }
-
-// .l-header-nav__line:nth-child(3) {
-//   transform: translate(0, 6px);
-// }
 
 .l-header-nav__container {
   display: none;
@@ -194,16 +182,11 @@ header {
   padding-top: 72px;
   border-radius: 32px 0 0 32px;
   overflow: hidden;
+  // opacity: 0;
 }
 
-.close {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  z-index: 5;
-  top: 20px;
-  right: 20px;
-}
+
+
 
 .l-header-nav__container-bg {
   position: absolute;
@@ -211,8 +194,9 @@ header {
   width: 100%;
   height: 100%;
   transform-origin: top center;
-  background-color: white;/* #fffaf0 */
+  background-color: #fffaf0;
   border-radius: 32px 0 0 32px;
+  // z-index: 100;
 }
 
 .l-header-nav__list {
@@ -224,16 +208,20 @@ header {
 }
 
 .l-header-nav__link {
-  display: flex;
+  display: block;
   width: 100%;
   height: 100%;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 1px;
-  line-height: 44px;
+  line-height: 24px;
   color: #F0A28F;
+  margin: 24px;
+  border-bottom: solid 1px #F0A28F;
 }
+
+
 
 .l-header-nav-overlay {
   display: none;
@@ -244,6 +232,8 @@ header {
   height: 100%;
   z-index: 98;
 }
+
+
 
 /* top ================================ */
 .top-main {
@@ -307,14 +297,7 @@ header {
   }
 }
 
-// .top-menu a {
-//   color: #5F3F01;
-// }
 
-
-.signup .signin  a:hover {
-  color: gray;
-}
 
 /* フォーム================================ */
 .form {
@@ -386,14 +369,14 @@ header {
     text-decoration: none;
     border-radius: 2px;
 }
-    input[type="submit"] {
-      background-color: #FFD6D4;/*ボタン色*/
-      color: #5F3F01;
-      border-bottom: solid 4px #F0A28F;
-      border-radius: 8px;
-      border-top: none;/* ボタンの上のボーダー */
-      border-right: none;/* ボタンの右のボーダー */
-      border-left: none;/* ボタンの左のボーダー */
+  input[type="submit"] {
+    background-color: #FFD6D4;/*ボタン色*/
+    color: #5F3F01;
+    border-bottom: solid 4px #F0A28F;
+    border-radius: 8px;
+    border-top: none;/* ボタンの上のボーダー */
+    border-right: none;/* ボタンの右のボーダー */
+    border-left: none;/* ボタンの左のボーダー */
   }
   .form input:active {
   /*ボタンを押したとき*/

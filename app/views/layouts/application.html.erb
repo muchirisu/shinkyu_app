@@ -59,9 +59,12 @@
         </ul>
         <div class="l-header-nav">
           <div class="l-header-nav-trigger">
-              <%# <div class="open"> %>
+              <div class="open">
                 <img src="/assets/open.png" alt="メニューを開くボタン">
-              <%# </div> %>
+              </div>
+              <div class="close">
+                <img src="/assets/close.png" alt="メニューを閉じるボタン">
+              </div> 
               
             <%# <div class="l-header-nav__line"></div>
             <div class="l-header-nav__line"></div>
@@ -70,9 +73,9 @@
         </div>
       </div>
       <div class="l-header-nav__container">
-        <div class="close">
+        <%# <div class="close">
           <img src="/assets/close.png" alt="メニューを閉じるボタン">
-        </div> 
+        </div>  %>
         <div class="l-header-nav__container-bg"></div>
         <ul class="l-header-nav__list">
           <%# <li class="l-header-nav__item"> %>
@@ -81,21 +84,21 @@
 
         <% if !@current_newuser.nil? %>
           <li class="l-header-nav__item">
-            <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "l-header-menu__link") %>
-            <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "l-header-menu__link") %>
-            <%= link_to("投稿一覧", "/newposts/index", class: "l-header-menu__link") %>
-            <%= link_to("ログアウト", "/newusers/logout", class: "l-header-menu__link", method: :post) %>
+            <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "l-header-nav__link") %>
+            <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "l-header-nav__link") %>
+            <%= link_to("投稿一覧", "/newposts/index", class: "l-header-nav__link") %>
+            <%= link_to("ログアウト", "/newusers/logout", class: "l-header-nav__link", method: :post) %>
         <% end %>
         
           <%# user_type==2(鍼灸師さん)がログインしている時 %>
         <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
-            <%= link_to("新規投稿", "/newposts/new", class: "l-header-menu__link") %>
+            <%= link_to("新規投稿", "/newposts/new", class: "l-header-nav__link") %>
         <% end %>
           
           <%# ログイン状態でない時 %>
         <% if @current_newuser.nil? %> 
-            <%= link_to("新規ユーザー登録", "/newusers/signup", class: "l-header-menu__link") %>
-            <%= link_to("ログイン", "/newusers/login", class: "l-header-menu__link") %>
+            <%= link_to("新規ユーザー登録", "/newusers/signup", class: "l-header-nav__link") %>
+            <%= link_to("ログイン", "/newusers/login", class: "l-header-nav__link") %>
           </li>
         <% end %>
 
