@@ -79,27 +79,26 @@
         <ul class="header-nav__list">
           <%# <li class="header-nav__item"> %>
 
-
-
-        <% if !@current_newuser.nil? %>
-          <li class="header-nav__item">
-            <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-nav__link") %>
-            <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-nav__link") %>
-            <%= link_to("投稿一覧", "/newposts/index", class: "header-nav__link") %>
-            <%= link_to("ログアウト", "/newusers/logout", class: "header-nav__link", method: :post) %>
-        <% end %>
-        
-          <%# user_type==2(鍼灸師さん)がログインしている時 %>
-        <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
-            <%= link_to("新規投稿", "/newposts/new", class: "header-nav__link") %>
-        <% end %>
+   
+        <li class="header-nav__item">
+          <% if !@current_newuser.nil? %>
+              <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-nav__link") %>
+              <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-nav__link") %>
+              <%= link_to("投稿一覧", "/newposts/index", class: "header-nav__link") %>
+              <%= link_to("ログアウト", "/newusers/logout", class: "header-nav__link", method: :post) %>
+          <% end %>
           
-          <%# ログイン状態でない時 %>
-        <% if @current_newuser.nil? %> 
-            <%= link_to("新規ユーザー登録", "/newusers/signup", class: "header-nav__link") %>
-            <%= link_to("ログイン", "/newusers/login", class: "header-nav__link") %>
-          </li>
-        <% end %>
+            <%# user_type==2(鍼灸師さん)がログインしている時 %>
+          <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
+              <%= link_to("新規投稿", "/newposts/new", class: "header-nav__link") %>
+          <% end %>
+            
+            <%# ログイン状態でない時 %>
+          <% if @current_newuser.nil? %> 
+              <%= link_to("新規ユーザー登録", "/newusers/signup", class: "header-nav__link") %>
+              <%= link_to("ログイン", "/newusers/login", class: "header-nav__link") %>
+          <% end %>
+        </li>
 
 
           
