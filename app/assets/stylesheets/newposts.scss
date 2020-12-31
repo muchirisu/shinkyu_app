@@ -25,14 +25,13 @@
   }
 }
 
-// .newpost-left img {
-//   width: 60px;
-//   height: 60px;
-//   border-radius: 32%;
-//   box-shadow: 0 2px 6px #c1ced7;
-//   // margin: 20px 0 10px;
-//   object-fit: cover;
-// }
+.newpost-right {
+  float: left;
+  width: 90%;
+  padding-left: 32px;
+  text-align: left;
+  // margin: 16px;
+}
 
 .newpost-name a {
   font-weight: 600;
@@ -41,22 +40,15 @@
   }
 }
 
-// .newpost-name a:hover {
-//   color: #ffb6b2
-// }
-
-// .newpost-left {
-//   float: left;
-//   width: 10%;
-// }
-
-.newpost-right {
-  float: left;
-  width: 90%;
-  padding-left: 32px;
-  text-align: left;
-  // margin: 16px;
+.newpost-post {
+  font-weight: 400;
+  vertical-align: middle;
+  font-size: 14px;
+  margin-top: 8px;
 }
+
+
+
 
 
 // コメント部分の実装
@@ -72,26 +64,23 @@
 }
 
 
-
-.newpost-left-newcomment img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
-}
-
 .newpost-newuser-name-newcomment a {
   font-weight: 600;
-}
-
-.newpost-newuser-name-newcomment a:hover {
-  color: #ffb6b2
+  &:hover {
+    color: #ffb6b2
+  }
 }
 
 .newpost-left-newcomment {
   float: left;
   width: 10%;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+  }
 }
 
 .newpost-right-newcomment {
@@ -110,36 +99,30 @@
   display: inline;
 }
 
-
-
 .newposts-show-item {
   padding: 30px;
   background-color: #fffaf0;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
-  // border-radius: 32px;
-}
-
-.newposts-show-item img {
-  width: 60px;
-  height: 60px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  vertical-align: middle;
-  object-fit: cover;
-}
-
-.newposts-show-item .newpost-name a {
   vertical-align: middle;
   font-size: 24px;
   margin-left: 15px;
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+  p {
+    font-size: 24px;
+    margin: 24px;
+    // text-align: center;
+  }
 }
 
-.newposts-show-item p {
-  font-size: 24px;
-  margin: 24px;
-  // text-align: center;
-}
+
 
 .newpost-time {
   color: #8899a6;
@@ -148,9 +131,14 @@
 
 .newpost-menus {
   float: right;
+  a {
+    color: #8899a6;
+  text-decoration: underline;
+  font-size: 14px;
+  }
 }
 
-.newpost-menus a, .newcomment-menus a, .newpost-menus input {
+.newcomment-menus a, .newpost-menus input {
   color: #8899a6;
   text-decoration: underline;
   font-size: 14px;
@@ -176,7 +164,8 @@
 }
 
 .newlike-btn {
-  color: #F58B3B;
+  color: #F0A28F;
+  ;
 }
 
 .newlike-btn-unlike {
