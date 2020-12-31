@@ -18,11 +18,13 @@
     <div class="newposts-index-item">
       <div class="newuser-profile">
         <ul>
-          <li><%= @newuser.name %></li>
-          <li><%= @newuser.content %></li>
-          <li><%= @newuser.address %></li>
-          <li><%= @newuser.access %></li>
-          <li><%= @newuser.email %></li>
+          <div class="newuser-profile-list">
+            <li class="newuser-profile-item">名前<%= @newuser.name %></li>
+            <li class="newuser-profile-item">一言<%= @newuser.content %></li>
+            <li class="newuser-profile-item">住所<%= @newuser.address %></li>
+            <li class="newuser-profile-item">アクセス<%= @newuser.access %></li>
+            <li class="newuser-profile-item">メールアドレス<%= @newuser.email %></li>
+          </div>
         </ul>
       </div>
     </div>
