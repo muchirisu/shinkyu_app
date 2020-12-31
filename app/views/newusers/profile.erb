@@ -9,6 +9,9 @@
     </div>
     
     <ul class="newuser-tabs">
+      <% if !@current_newuser.nil? && @current_newuser.user_type==2 %>
+        <li><%= link_to("投稿", "/newusers/#{@newuser.id}") %></li>
+      <% end %>
       <li><%= link_to("いいね!", "/newusers/#{@newuser.id}/likes") %></li>
       <li class="active"><%= link_to("プロフィール", "/newusers/#{@newuser.id}/profile") %></li>
     </ul>
