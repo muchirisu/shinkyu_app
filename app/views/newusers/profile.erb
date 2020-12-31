@@ -9,7 +9,6 @@
     </div>
     
     <ul class="newuser-tabs">
-      <li><%= link_to("投稿", "/newusers/#{@newuser.id}") %></li>
       <li><%= link_to("いいね!", "/newusers/#{@newuser.id}/likes") %></li>
       <li class="active"><%= link_to("プロフィール", "/newusers/#{@newuser.id}/profile") %></li>
     </ul>
