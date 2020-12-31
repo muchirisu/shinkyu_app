@@ -47,17 +47,12 @@
         </ul>
         <div class="header-nav">
           <div class="header-nav-trigger">
-            <div class="open">
-              <img src="/assets/open.png" alt="メニューを開くボタン">
-            </div>
-            <div class="close">
-              <img src="/assets/close.png" alt="メニューを閉じるボタン">
-            </div> 
+            <img src="/assets/open.png" alt="メニューを開くボタン" id ="menu-btn">
           </div>
         </div>
       </div>
-      <div class="header-nav__container">
 
+      <div class="header-nav__container" id="menu-conts">
         <ul class="header-nav__list">
           <li class="header-nav__item">
             
@@ -79,9 +74,6 @@
               <%= link_to("ログイン", "/newusers/login", class: "header-nav__link") %>
             <% end %>
           </li>
-
-
-          
         </ul>
       </div>
     </header>

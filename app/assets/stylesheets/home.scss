@@ -157,7 +157,7 @@ header {
   line-height: 24px;
 }
 
-.header-nav {
+#menu-btn {
   position: relative;
   width: 32px;
   height: 32px;
@@ -165,23 +165,33 @@ header {
   z-index: 5;
 }
 
-.close {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  z-index: 5;
-  top: 0px;
-  right: 0px;
-  display: none;
+#menu-conts a {
+  display: block;
+  color: $color-coralpink;
+  text-decoration: none;
+  padding: 8px 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
+
+
 
 .header-nav-trigger {
   width: 100%;
   height: 100%;
 }
 
+// .header-nav-trigger .active {
+  
+// }
 
-.header-nav__container {
+// .header-nav__container .active {
+//   opacity: 1;
+// }
+
+#menu-conts {
   display: none;
   position: fixed;
   z-index: 80;
@@ -392,3 +402,4 @@ input[type="submit"] {
   border-radius: 0 0 2px 2px;
   font-size: 14px;
 }
+
