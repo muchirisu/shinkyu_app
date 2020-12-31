@@ -28,77 +28,57 @@
         <% if !@current_newuser.nil? %>
           <li class="header-menu__item">
             <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-menu__link") %>
-          <%# </li> %>
-          <%# <li class="header-menu__item"> %>
             <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-menu__link") %>
-          <%# </li> %>
-          <%# <li class="header-menu__item"> %>
             <%= link_to("投稿一覧", "/newposts/index", class: "header-menu__link") %>
-          <%# </li> %>
-          <%# <li class="header-menu__item"> %>
             <%= link_to("ログアウト", "/newusers/logout", class: "header-menu__link", method: :post) %>
-          <%# </li> %>
         <% end %>
         
           <%# user_type==2(鍼灸師さん)がログインしている時 %>
         <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
-          <%# <li class="header-menu__item"> %>
             <%= link_to("新規投稿", "/newposts/new", class: "header-menu__link") %>
-          <%# </li> %>
         <% end %>
           
           <%# ログイン状態でない時 %>
         <% if @current_newuser.nil? %> 
-          <%# <li class="header-menu__item"> %>
             <%= link_to("新規ユーザー登録", "/newusers/signup", class: "header-menu__link") %>
-          <%# </li> %>
-          <%# <li class="header-menu__item"> %>
             <%= link_to("ログイン", "/newusers/login", class: "header-menu__link") %>
           </li>
         <% end %>
         </ul>
         <div class="header-nav">
           <div class="header-nav-trigger">
-              <div class="open">
-                <img src="/assets/open.png" alt="メニューを開くボタン">
-              </div>
-              <div class="close">
-                <img src="/assets/close.png" alt="メニューを閉じるボタン">
-              </div> 
-              
-            <%# <div class="header-nav__line"></div>
-            <div class="header-nav__line"></div>
-            <div class="header-nav__line"></div> %>
+            <div class="open">
+              <img src="/assets/open.png" alt="メニューを開くボタン">
+            </div>
+            <div class="close">
+              <img src="/assets/close.png" alt="メニューを閉じるボタン">
+            </div> 
           </div>
         </div>
       </div>
       <div class="header-nav__container">
-        <%# <div class="close">
-          <img src="/assets/close.png" alt="メニューを閉じるボタン">
-        </div>  %>
-        <ul class="header-nav__list">
-          <%# <li class="header-nav__item"> %>
 
-   
-        <li class="header-nav__item">
-          <% if !@current_newuser.nil? %>
+        <ul class="header-nav__list">
+          <li class="header-nav__item">
+            
+            <% if !@current_newuser.nil? %>
               <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-nav__link") %>
               <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-nav__link") %>
               <%= link_to("投稿一覧", "/newposts/index", class: "header-nav__link") %>
               <%= link_to("ログアウト", "/newusers/logout", class: "header-nav__link", method: :post) %>
-          <% end %>
-          
-            <%# user_type==2(鍼灸師さん)がログインしている時 %>
-          <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
-              <%= link_to("新規投稿", "/newposts/new", class: "header-nav__link") %>
-          <% end %>
+            <% end %>
             
+              <%# user_type==2(鍼灸師さん)がログインしている時 %>
+            <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
+                <%= link_to("新規投稿", "/newposts/new", class: "header-nav__link") %>
+            <% end %>
+          
             <%# ログイン状態でない時 %>
-          <% if @current_newuser.nil? %> 
+            <% if @current_newuser.nil? %> 
               <%= link_to("新規ユーザー登録", "/newusers/signup", class: "header-nav__link") %>
               <%= link_to("ログイン", "/newusers/login", class: "header-nav__link") %>
-          <% end %>
-        </li>
+            <% end %>
+          </li>
 
 
           

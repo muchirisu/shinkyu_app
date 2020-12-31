@@ -9,7 +9,9 @@
           <div class="newpost-name">
             <%= link_to(newpost.newuser.name, "/newusers/#{newpost.newuser.id}") %>
           </div>
-          <%= link_to(newpost.content, "/newposts/#{newpost.id}") %>
+          <div class="newpost-post">
+            <%= link_to(newpost.content, "/newposts/#{newpost.id}") %>
+          </div>
         </div> 
       </div>
     <% end %>
