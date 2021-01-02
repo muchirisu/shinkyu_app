@@ -3,6 +3,7 @@ class Newuser < ApplicationRecord
 
   validates :name, {presence: true}
   validates :email, {presence: true, uniqueness: true}
+  validates :content, length: { minimum: 1}
   # validates :password_digest, format: { with: /\A\d+-\d+-\d+\z/}
   
 
