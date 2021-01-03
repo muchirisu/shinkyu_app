@@ -24,26 +24,26 @@
         <% end %>
       
         <ul class="header-menu__list">
-          <%# ユーザーがログインしている時 %>
-        <% if !@current_newuser.nil? %>
           <li class="header-menu__item">
+          <%# ユーザーがログインしている時 %>
+          <% if !@current_newuser.nil? %>
             <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-menu__link") %>
             <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-menu__link") %>
             <%= link_to("投稿一覧", "/newposts/index", class: "header-menu__link") %>
             <%= link_to("ログアウト", "/newusers/logout", class: "header-menu__link", method: :post) %>
-        <% end %>
+          <% end %>
         
           <%# user_type==2(鍼灸師さん)がログインしている時 %>
-        <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
+          <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
             <%= link_to("新規投稿", "/newposts/new", class: "header-menu__link") %>
-        <% end %>
+          <% end %>
           
           <%# ログイン状態でない時 %>
-        <% if @current_newuser.nil? %> 
+          <% if @current_newuser.nil? %> 
             <%= link_to("新規ユーザー登録", "/newusers/signup", class: "header-menu__link") %>
             <%= link_to("ログイン", "/newusers/login", class: "header-menu__link") %>
+          <% end %>
           </li>
-        <% end %>
         </ul>
         <div class="header-nav">
           <div class="header-nav-trigger">
