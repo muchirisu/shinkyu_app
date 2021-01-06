@@ -12,12 +12,9 @@ $color-lightpink: #FFD6D4;
 $color-cream: #fffaf0;
 // 文字のリンク
 $color-coralpink: #F0A28F;
-// これは上の物に統一
-// #ffb6b2　
-// 灰色
+
 $color-gray: #8899a6;
-// unlikebtn
-// #D9D9D9
+
 
 
 * {
@@ -55,12 +52,6 @@ html, body {
     display: block;
   }
 }
-
-// ul, li {
-//   list-style-type: none;
-//   padding: 0;
-//   margin: 0;
-// }
 
 
 
@@ -103,7 +94,6 @@ header {
   .header-menu__list {
     display: none;
   }
-
 }
 
 @media (min-width: 751px) {
