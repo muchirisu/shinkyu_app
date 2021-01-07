@@ -96,8 +96,8 @@
   box-shadow: 0 2px 6px $color-gray;
   overflow: hidden;
   vertical-align: middle;
-  font-size: 24px;
-  margin-left: 15px;
+  font-size: 16px;
+  margin-left: 16px;
   img {
     width: 60px;
     height: 60px;
@@ -108,15 +108,18 @@
   }
   p {
     font-size: 24px;
-    margin: 24px;
-    // text-align: center;
+    margin: 24px 0px;
   }
 }
 
+.newpost-name a {
+  margin-left: 8px;
+}
 
 .newpost-time {
   color: $color-gray;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  text-align: start;
 }
 
 .newpost-menus {

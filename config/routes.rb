@@ -43,15 +43,16 @@ Rails.application.routes.draw do
   #編集したページのフォームデータを受け取るページ
   
   # ユーザー編集ページ
-  post "newusers/create" => "newusers#create"
-  get "newusers/index" => "newusers#index"
   post "newusers/login" => "newusers#login"
   post "newusers/logout" => "newusers#logout"
   get "newusers/login" => "newusers#login_form"
-  get "newusers/signup" => "newusers#new"
-  get "newusers/:id" => "newusers#show"
-  get "newusers/:id/edit" => "newusers#edit"
   post "newusers/:id/update" => "newusers#update"
+  get "newusers/:id/edit" => "newusers#edit"
+  post "newusers/create" => "newusers#create"
+  get "newusers/signup" => "newusers#new"
+  get "newusers/index" => "newusers#index"
+  get "newusers/:id" => "newusers#show"
+  
   
   # get "newusers/:id/comments" => "newusers#comments"
   
