@@ -1,7 +1,7 @@
 <div class="main newusers-show">
   <div class="container">
     <div class="newuser">
-      <img src="<%= "/newuser_images/#{@newuser.image}" %>">    
+      <img src="<%= "/newuser_images/#{@newuser.image}" %>" alt="ユーザー画像">    
       <h2><%= @newuser.name %></h2>
       <%# ログインしているユーザーのみ編集できる %>
       <% if !@current_newuser.nil? && @newuser.id == @current_newuser.id %>

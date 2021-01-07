@@ -2,7 +2,7 @@
   <div class="container">
     <div class="newposts-show-item">
       <div class="newpost-name">
-        <img src = "<%= "/newuser_images/#{@newuser.image}" %>">
+        <img src = "<%= "/newuser_images/#{@newuser.image}" %>" alt="鍼灸師さんのユーザー画像">
         <%= link_to(@newuser.name, "/newusers/#{@newuser.id}")%>
       </div>
       <p>
@@ -39,7 +39,7 @@
           <div class="newposts-index-item-newcomment">
             <div class="newpost-left-newcomment">
             <%# <% if !newcomment.newuser.nil? %> 
-              <img src="<%= "/newuser_images/#{newcomment.newuser.image}" %>">
+              <img src="<%= "/newuser_images/#{newcomment.newuser.image}" %>" alt="ユーザー画像">
             </div>
             <div class="newpost-right-newcomment">
               <div class="newpost-newuser-name-newcomment">
