@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_133812) do
+ActiveRecord::Schema.define(version: 2021_01_08_151753) do
+
+  create_table "follow_relationships", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "following_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id", "following_id"], name: "index_follow_relationships_on_follower_id_and_following_id", unique: true
+    t.index ["follower_id"], name: "index_follow_relationships_on_follower_id"
+    t.index ["following_id"], name: "index_follow_relationships_on_following_id"
+  end
 
   create_table "newcomments", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -54,4 +64,18 @@ ActiveRecord::Schema.define(version: 2020_11_24_133812) do
     t.string "password_digest"
   end
 
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "following_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+    t.index ["following_id"], name: "index_relationships_on_following_id"
+  end
+
+  add_foreign_key "follow_relationships", "followers"
+  add_foreign_key "follow_relationships", "followings"
+  add_foreign_key "relationships", "newuers", column: "follower_id"
+  add_foreign_key "relationships", "newuers", column: "following_id"
 end
