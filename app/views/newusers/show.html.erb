@@ -7,6 +7,7 @@
       <% if !@current_newuser.nil? && @newuser.id == @current_newuser.id %>
         <%= link_to("ユーザー情報編集", "/newusers/#{@newuser.id}/edit") %>
       <% end %>
+      <a href="#" class="btn-follow-big">★フォローする</a>
     </div>
 
     <ul class="newuser-tabs">
