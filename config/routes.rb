@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-
   
   
-
- 
 
   # get 'users/show'
   # いいねのページ
@@ -14,33 +11,9 @@ Rails.application.routes.draw do
   # post "likes/:post_id/prouser_destroy" => "likes#prouser_destroy"
   post "newlikes/:post_id/create" => "newlikes#create"
   post "newlikes/:post_id/destroy" => "newlikes#destroy"
-  
-  
-  
-
-  
-  
-  # users===============
-  # get "users/login" => "users#login_form"
-  # post "users/login" => "users#login"
-  # post "users/logout" => "users#logout"
-  # post "users/:id/update" => "users#update"
-  # get "users/:id/edit" => "users#edit"
-  # get "users/signup" => "users#new"
-  # post "users/create" => "users#create"
-  # get "users/:id" => "users#show"
 
 
-  # newusers==============
-  # ログインフォームのページ
-  
-  
-  
-  
-  
-  
-  
-  #編集したページのフォームデータを受け取るページ
+
   
   # ユーザー編集ページ
   post "newusers/login" => "newusers#login"
@@ -52,12 +25,9 @@ Rails.application.routes.draw do
   get "newusers/signup" => "newusers#new"
   get "newusers/index" => "newusers#index"
   get "newusers/:id" => "newusers#show"
-  
-  
-  # get "newusers/:id/comments" => "newusers#comments"
-  
   get "newusers/:id/profile" => "newusers#profile"
   get "newusers/:id/likes" => "newusers#likes"
+  
   
   
   
@@ -118,5 +88,12 @@ post "newcomments/:post_id/create" => "newcomments#create"
 post "newcomments/:post_id/update" => "newcomments#update"
 post "newcomments/:post_id/destroy" => "newcomments#destroy"
 
+
+resources :newusers do
+  resource :relationships, only: [:create, :destroy]
+  #memberとつけることでidを含むpathになる
+  get :follows, on: :member 
+  get :followers, on: :member 
+end
 
 end

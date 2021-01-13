@@ -1,0 +1,13 @@
+
+
+<% @newusers.each do |newuser| %>
+  <p><span>email: </span><%= link_to newuser.email, newuser_path(newuser.id) %></p>
+  <p><span>image: </span><%= link_to newuser.image, newuser_path(newuser.id) %></p>
+  <% if @current_newuser != newuser %>
+    <% if newuser.followed_by?(@current_newuser) %>
+        <p><%=link_to "フォロー済み", newuser_relationships_path(newuser.id), method: :delete %></p>
+    <% else %>
+        <p><%=link_to "フォローする", newuser_relationships_path(newuser.id), method: :post %></p>
+    <% end %>
+  <% end %>
+<% end %>

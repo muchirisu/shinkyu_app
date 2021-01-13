@@ -12,7 +12,7 @@ class NewpostsController < ApplicationController
     @newuser = @newpost.newuser
     @newlikes_count = Newlike.where(post_id: @newpost.id).count
     @newcomments = Newcomment.where(post_id: @newpost.id).order(created_at: :desc)
-    
+    # @newuser = Newuser.find(params[:relationship][:follow_id])
 
   end
 

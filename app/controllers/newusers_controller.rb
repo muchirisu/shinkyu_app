@@ -92,8 +92,17 @@ class NewusersController < ApplicationController
   def profile
     @newuser = Newuser.find_by(id: params[:id])
   end
-  
-  
+
+
+  def follows
+    newuser = Newuser.find(params[:id])
+    @newusers = newuser.followings
+  end
+
+  def followers
+    newuser = Newuser.find(params[:id])
+    @newusers = newuser.followers
+  end
 
   # ログイン中のユーザーのidと編集したいユーザーのidが等しいか判定
   def ensure_correct_newuser

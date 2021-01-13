@@ -5,23 +5,28 @@
     </div>
     <div class="newusers-index-list">
       <% @newusers.each do |newuser| %>
-      <div class="newusers-index-item">
-        <div class="newuser-left">
-          <img src="<%= "/newuser_images/#{newuser.image}" %>" alt="鍼灸師さんのユーザー画像">
+        <div class="newusers-index-item">
+          <div class="newuser-left">
+            <img src="<%= "/newuser_images/#{newuser.image}" %>" alt="鍼灸師さんのユーザー画像">
+          </div>
+          <div class="newuser-right">
+            <div class="newuser-right-name">
+              <%= link_to(newuser.name, "/newusers/#{newuser.id}") %>
+            </div>
+            <div class="newuser-right-content">
+              <%= newuser.content %>
+            </div>
+            <div class="newprofile-menus">
+              <% if @current_newuser.present? && newuser.id != @current_newuser.id %>
+                <% if newuser.followed_by?(@current_newuser) %>
+                    <p><%=link_to "フォロー済み", newuser_relationships_path(newuser.id), method: :delete %></p>
+                <% else %>
+                    <p><%=link_to "フォローする", newuser_relationships_path(newuser.id), method: :post %></p>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
-        <div class="newuser-right">
-          <div class="newuser-right-name">
-            <%= link_to(newuser.name, "/newusers/#{newuser.id}") %>
-          </div>
-          <div class="newuser-right-content">
-            <%= newuser.content %>
-          </div>
-          <div class="newprofile-menus">
-            <a href="#" class="btn-follow-big">★フォローする</a>
-            </ul>
-          </div>
-        </div>
-      </div>
       <% end %>
     </div>
   </div>
