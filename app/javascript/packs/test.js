@@ -1,4 +1,4 @@
-$(function () {
+$(document).on("turbolinks:load", function () {
   $('#type-shinkyu').on('click', function () {
     $('#hide-text').show();
   });
