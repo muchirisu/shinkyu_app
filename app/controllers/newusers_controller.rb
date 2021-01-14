@@ -94,14 +94,14 @@ class NewusersController < ApplicationController
   end
 
 
-  def follows
-    newuser = Newuser.find(params[:id])
-    @newusers = newuser.followings
+  def following
+    @newuser = Newuser.find(params[:id])
+    @newusers = @newuser.followings
   end
 
-  def followers
-    newuser = Newuser.find(params[:id])
-    @newusers = newuser.followers
+  def follower
+    @newuser = Newuser.find(params[:id])
+    @newusers = @newuser.followers
   end
 
   # ログイン中のユーザーのidと編集したいユーザーのidが等しいか判定

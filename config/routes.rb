@@ -92,8 +92,8 @@ post "newcomments/:post_id/destroy" => "newcomments#destroy"
 resources :newusers do
   resource :relationships, only: [:create, :destroy]
   #memberとつけることでidを含むpathになる
-  get :follows, on: :member 
-  get :followers, on: :member 
+  get :following, on: :member 
+  get :follower, on: :member 
 end
 
 end
