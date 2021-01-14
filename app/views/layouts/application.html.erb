@@ -28,7 +28,7 @@
         <ul class="header-menu__list">
           <li class="header-menu__item">
           <%# ユーザーがログインしている時 %>
-          <% if !@current_newuser.nil? %>
+          <% if @current_newuser.present? %>
             <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-menu__link") %>
             <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-menu__link") %>
             <%= link_to("投稿一覧", "/newposts/index", class: "header-menu__link") %>
@@ -36,7 +36,7 @@
           <% end %>
         
           <%# user_type==2(鍼灸師さん)がログインしている時 %>
-          <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
+          <% if @current_newuser.present? && @current_newuser.user_type==2 %> 
             <%= link_to("新規投稿", "/newposts/new", class: "header-menu__link") %>
           <% end %>
           
@@ -58,7 +58,7 @@
         <ul class="header-nav__list">
           <li class="header-nav__item">
             
-            <% if !@current_newuser.nil? %>
+            <% if @current_newuser.present? %>
               <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-nav__link") %>
               <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-nav__link") %>
               <%= link_to("投稿一覧", "/newposts/index", class: "header-nav__link") %>
@@ -66,7 +66,7 @@
             <% end %>
             
               <%# user_type==2(鍼灸師さん)がログインしている時 %>
-            <% if !@current_newuser.nil? && @current_newuser.user_type==2 %> 
+            <% if @current_newuser.present? && @current_newuser.user_type==2 %> 
                 <%= link_to("新規投稿", "/newposts/new", class: "header-nav__link") %>
             <% end %>
           
