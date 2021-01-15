@@ -337,26 +337,32 @@ input[type="submit"] {
   border-bottom: none;/*線を消す*/
 }
 
-
-.type-user {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  // padding: 0;
-  // margin: 0;
+input[type="radio"] {
+  top: 6px;
+  position: relative;
+  margin: 0;
+  margin-left: 64px;
 }
 
+
 .type-user-select-area {
-  display: block;
-  overflow: hidden;
-  // width: 200px;
-  // width: 40%;
+  display: flex;
+  // overflow: hidden;
+  margin-top: 16px;
+}
+label {
+  // 文字の折り返しなし
+  white-space: nowrap;
+  position: relative;
 }
 
 .radio {
-  padding: 0;
-  float: left;
   width: 40%;
+  display: flex;
+  // ラジオボタンを左寄せ
+  margin-left: -48px;
+  // ラジオボタン間の距離
+  margin-right: 24px;
 }
 
 /* フラッシュ ================================ */
