@@ -1,5 +1,8 @@
 @import "home";
 
+.newusers-index-list {
+  border: solid 1px $color-coralpink;
+}
 .newusers-index-item {
   padding: 20px 30px;
   background-color: $color-cream;
@@ -8,6 +11,7 @@
   display: flex;
   width: 100%;
   height: 100%;
+  border-bottom: solid 1px $color-coralpink;
 }
 
 .select-area {
@@ -25,38 +29,39 @@
   }
 }
 
-.select-area-item {
+.select-area {
   top: 100px;
+  display: block;
+  cursor: pointer;
 }
+
 
 
 .newuser-left {
   width: 10%;
   img {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: auto;
     border-radius: 32%;
-    // box-shadow: 0 2px 6px $color-gray;
-    // margin: 20px 0 10px;
-    object-fit: cover;
+    vertical-align: middle;
   }
 }
 
 
 .newuser-right {
-  width: 90%;
-  padding-left: 40px;
-  text-align: center;
+  width: 80%;
+  padding-left: 32px;
   display: flex;
-  flex-direction: column;
+  position: relative;
+  top: 12px;
+  justify-content: space-between;
 }
 
 .newuser-right-name {
   font-size: 20px;
+  // margin-right: 24px;
 }
-.newuser-right-content {
-  font-size: 14px;
-}
+
 
 
 .newusers-show {
@@ -126,7 +131,24 @@
   margin: 8px;
 }
 
-.btn-follow-big {
+.btn-follow {
+  position: relative;
+  display: inline-block;
+  padding:  4px 8px;
+  text-decoration: none;
+  color: $color-coralpink;
+  background: #fff;/*色*/
+  border: solid 1px lighten($color-coralpink, 10%);/*線色*/
+  border-radius: 8px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    &:active {
+      background-color: lighten($color-coralpink, 20%);
+      box-shadow: none;
+      text-shadow: none;
+    }
+}
+.btn-unfollow {
   position: relative;
   display: inline-block;
   padding:  4px 8px;
@@ -138,7 +160,7 @@
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
   text-shadow: 0 1px 0 rgba(0,0,0,0.2);
     &:active {
-      background-color: $color-gray;
+      background-color: darken($color-coralpink, 20%);
       box-shadow: none;
       text-shadow: none;
     }
