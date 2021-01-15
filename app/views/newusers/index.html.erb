@@ -1,8 +1,9 @@
 <div class="main newusers-index">
   <div class="container">
     <div class="select-area">
-      <p >エリアから探す</p>
+      <p>エリアから探す</p>
     </div>
+    
     <div class="newusers-index-list">
       <% @newusers.each do |newuser| %>
         <div class="newusers-index-item">
@@ -12,16 +13,18 @@
           <div class="newuser-right">
             <div class="newuser-right-name">
               <%= link_to(newuser.name, "/newusers/#{newuser.id}") %>
+              <%= newuser.prefecture %>
             </div>
-            <div class="newuser-right-content">
-              <%= newuser.content %>
-            </div>
-            <div class="newprofile-menus">
+            <div class="newuser-right-follow">
               <% if @current_newuser.present? && newuser.id != @current_newuser.id %>
                 <% if newuser.followed_by?(@current_newuser) %>
-                    <p><%=link_to "フォロー済み", newuser_relationships_path(newuser.id), method: :delete %></p>
+                  <%= link_to newuser_relationships_path(newuser.id), method: :delete do %>
+                    <span class="btn-follow">★フォローする</span>
+                  <% end %>
                 <% else %>
-                    <p><%=link_to "フォローする", newuser_relationships_path(newuser.id), method: :post %></p>
+                  <%= link_to newuser_relationships_path(newuser.id), method: :post do %>
+                    <span class="btn-unfollow">★フォロー中</span>
+                  <% end %>
                 <% end %>
               <% end %>
             </div>

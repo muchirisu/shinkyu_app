@@ -13,7 +13,7 @@
         <%= @newpost.created_at %>
       </div>
       <% if Newlike.find_by(user_id: @current_newuser.id, post_id: @newpost.id) %>
-          <%= link_to( "/newlikes/#{@newpost.id}/destroy", {method: "post"}) do %>
+          <%= link_to("/newlikes/#{@newpost.id}/destroy", {method: "post"}) do %>
           <span class="fa fa-heart newlike-btn"></span>
           <% end %>
         <% else %>
