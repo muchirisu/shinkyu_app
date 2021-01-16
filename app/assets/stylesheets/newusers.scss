@@ -1,17 +1,61 @@
 @import "home";
 
-.newusers-index-list {
+@mixin index-list {
   border: solid 1px $color-coralpink;
 }
-.newusers-index-item {
+@mixin index-item {
   padding: 20px 30px;
   background-color: $color-cream;
-  overflow: hidden;
-  // box-shadow: 0 2px 6px $color-gray;
-  display: flex;
-  width: 100%;
-  height: 100%;
   border-bottom: solid 1px $color-coralpink;
+  overflow: hidden;
+}
+
+@mixin item-left {
+  width: 10%;
+  img {
+    width: 48px;
+    height: auto;
+    border-radius: 32%;
+    vertical-align: middle;
+  }
+}
+
+@mixin item-right {
+  width: 80%;
+  padding-left: 32px;
+}
+
+@mixin index-item-name {
+  font-weight: 600;
+  & a:hover {
+    color: $color-coralpink;
+    cursor: pointer;
+  }
+}
+
+@mixin btn-item($color, $background) {
+  position: relative;
+  display: inline-block;
+  padding:  4px 8px;
+  text-decoration: none;
+  color: $color;
+  background: $background;
+  border: solid 1px lighten($color-coralpink, 10%);
+  border-radius: 8px;
+  &:active {
+    background-color: lighten($color-coralpink, 20%);
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
+.newusers-index-list {
+  @include index-list;
+}
+
+.newusers-index-item {
+  @include index-item;
+  display: flex;
 }
 
 .select-area {
@@ -22,6 +66,9 @@
   border-radius: 32px;
   // display: flex;
   align-items: center;
+  top: 100px;
+  display: block;
+  cursor: pointer;
   p {
     font-size: 16px;
     text-align: center;
@@ -29,56 +76,38 @@
   }
 }
 
-.select-area {
-  top: 100px;
-  display: block;
-  cursor: pointer;
-}
-
 
 
 .newuser-left {
-  width: 10%;
-  img {
-    width: 56px;
-    height: auto;
-    border-radius: 32%;
-    vertical-align: middle;
-  }
+  @include item-left;
 }
 
-
 .newuser-right {
-  width: 80%;
-  padding-left: 32px;
+  @include item-right;
   display: flex;
   position: relative;
   top: 12px;
   justify-content: space-between;
 }
 
+
+
 .newuser-right-name {
-  font-size: 20px;
-  // margin-right: 24px;
+  @include  index-item-name;
+  font-size: 16px;
 }
 
-
-
-.newusers-show {
-  text-align: center;
-}
 
 .newuser {
+  text-align: center;
   img {
     width: 80px;
     height: 80px;
     border-radius: 32%;
-    // box-shadow: 0 2px 6px $color-gray;
     margin: 20px 0 10px;
-    object-fit: cover;
   }
-  h2 {
-    font-size: 20px;
+  p {
+    font-size: 16px;
     font-weight: 600;
     margin-bottom: 8px;
   }
@@ -95,22 +124,25 @@
 }
 
 
+@media (min-width: 751px) {
+  .newuser-tabs a {
+    padding: 16px 24px;
+  }
+}
+
 .newuser-tabs {
   margin-top: 40px;
   background-color: $color-coralpink;
   overflow: hidden;
-  // box-shadow: 0 2px 6px $color-gray;
   li {
     float: left;
     }
-  
   a {
     display: inline-block;
     padding: 16px 12px;
     color: $color-brown;
     // opacity: 0.5;
   }
-  
 }
 .newuser-tabs li.active a {
   background-color: $color-cream;
@@ -131,46 +163,11 @@
   margin: 8px;
 }
 
-.btn-follow {
-  position: relative;
-  display: inline-block;
-  padding:  4px 8px;
-  text-decoration: none;
-  color: $color-coralpink;
-  background: #fff;/*色*/
-  border: solid 1px lighten($color-coralpink, 10%);/*線色*/
-  border-radius: 8px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-    &:active {
-      background-color: lighten($color-coralpink, 20%);
-      box-shadow: none;
-      text-shadow: none;
-    }
-}
+
+
 .btn-unfollow {
-  position: relative;
-  display: inline-block;
-  padding:  4px 8px;
-  text-decoration: none;
-  color: #FFF;
-  background: $color-coralpink;/*色*/
-  border: solid 1px $color-coralpink;/*線色*/
-  border-radius: 8px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-    &:active {
-      background-color: darken($color-coralpink, 20%);
-      box-shadow: none;
-      text-shadow: none;
-    }
+  @include btn-item($color-coralpink, $color-white);
 }
-
-
-
-
-@media (min-width: 751px) {
-  .newuser-tabs a {
-    padding: 16px 24px;
-  }
+.btn-follow {
+  @include btn-item( $color-white, $color-coralpink);
 }

@@ -1,19 +1,21 @@
 <div class="main newposts-index">
   <div class="container">
-    <% @newposts.each do |newpost| %>
-      <div class="newposts-index-item">
-        <div class="newpost-left">
-          <img src="<%= "/newuser_images/#{newpost.newuser.image}" %>" alt="鍼灸師さんのユーザー画像">
+    <div class="newposts-index-list">
+      <% @newposts.each do |newpost| %>
+        <div class="newposts-index-item">
+          <div class="newpost-left">
+            <img src="<%= "/newuser_images/#{newpost.newuser.image}" %>" alt="鍼灸師さんのユーザー画像">
+          </div>
+          <div class="newpost-right">
+            <div class="newpost-name">
+              <%= link_to(newpost.newuser.name, "/newusers/#{newpost.newuser.id}") %>
+            </div>
+            <div class="newpost-post">
+              <%= link_to(newpost.content, "/newposts/#{newpost.id}") %>
+            </div>
+          </div> 
         </div>
-        <div class="newpost-right">
-          <div class="newpost-name">
-            <%= link_to(newpost.newuser.name, "/newusers/#{newpost.newuser.id}") %>
-          </div>
-          <div class="newpost-post">
-            <%= link_to(newpost.content, "/newposts/#{newpost.id}") %>
-          </div>
-        </div> 
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

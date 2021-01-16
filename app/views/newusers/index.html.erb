@@ -19,11 +19,11 @@
               <% if @current_newuser.present? && newuser.id != @current_newuser.id %>
                 <% if newuser.followed_by?(@current_newuser) %>
                   <%= link_to newuser_relationships_path(newuser.id), method: :delete do %>
-                    <span class="btn-follow">★フォローする</span>
+                    <span class="btn-follow">フォロー中</span>
                   <% end %>
                 <% else %>
                   <%= link_to newuser_relationships_path(newuser.id), method: :post do %>
-                    <span class="btn-unfollow">★フォロー中</span>
+                    <span class="btn-unfollow">フォローする</span>
                   <% end %>
                 <% end %>
               <% end %>

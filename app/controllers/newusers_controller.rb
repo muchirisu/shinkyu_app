@@ -5,6 +5,8 @@ class NewusersController < ApplicationController
   before_action :ensure_correct_newuser, {only: [:edit, :update]}
   def index
     @newusers = Newuser.where(user_type: 2)
+    # @newusers = Newuser.where(user_type: 2, prefecture: params[:prefecture])
+    # @areanewusers = Newuser.where(prefecture: params[:prefecture])
   end
 
   def show
@@ -111,7 +113,6 @@ class NewusersController < ApplicationController
       redirect_to("/newposts/index")
     end 
   end
-
 
 
 end
