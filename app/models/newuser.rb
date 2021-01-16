@@ -3,7 +3,7 @@ class Newuser < ApplicationRecord
 
   validates :name, {presence: true}
   VALID_EMAIL_REGEX = /\A[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)\z/
-  validates :email, {presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }}
+  validates :email, {uniquess: true, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }}
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])\w{6,12}\z/
   validates :password, {format: { with: VALID_PASSWORD_REGEX, message: "6~12文字の半角英小文字・数字それぞれ１文字以上含む必要があります"}}
   validates :content, {length: { maximum: 200}}
