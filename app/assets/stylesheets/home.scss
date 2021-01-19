@@ -131,17 +131,75 @@ html, body {
   }
 }
 
-// .header-nav__list {
-//   position: relative;
-// }
 
-.header-menu__link {
-  display: block;
-  font-weight: 700;
-  font-size: 16px;
-  margin: 8px;
+.header-menu__item a {
+  // ヘッダーメニュー間の余白
+  margin-right: 16px;
+  font-weight: 600;
   color: $color-coralpink;
-  line-height: 24px;
+}
+
+.signup::before {
+  font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f234";
+  // アイコンと文字列の距離
+  margin-right: 4px;
+  color: $color-coralpink;
+}
+
+.login::before {
+  font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f2f6";
+  // アイコンと文字列の距離
+  margin-right: 4px;
+  color: $color-coralpink;
+}
+
+.logout::before {
+  font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f2f5";
+  // アイコンと文字列の距離
+  margin-right: 4px;
+  color: $color-coralpink;
+}
+
+.show-user::before {
+  font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f015";
+  // アイコンと文字列の距離
+  margin-right: 4px;
+  color: $color-coralpink;
+}
+
+.index-user::before {
+  font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f002";
+  // アイコンと文字列の距離
+  margin-right: 4px;
+  color: $color-coralpink;
+}
+
+.index-post::before {
+  font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f249";
+  // アイコンと文字列の距離
+  margin-right: 4px;
+  color: $color-coralpink;
+}
+
+.new-post::before {
+  font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+  content: "\f0fe";
+  // アイコンと文字列の距離
+  margin-right: 4px;
+  color: $color-coralpink;
 }
 
 .header-nav-trigger {
@@ -176,21 +234,24 @@ html, body {
   }
 }
 
-.header-nav__link {
-  display: block;
-  font-weight: 700;
+.header-nav__item {
+  font-weight: 600;
+  margin: 24px;
+}
+
+.header-nav__list a {
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
-  color: $color-coralpink;
-  margin: 24px;
+  margin-bottom: 24px;
   border-bottom: solid 1px $color-coralpink;
 }
+
 
 
 // topレイアウト
 
 .main-global {
-  
   text-align: center;
   color: $color-brown;
   background-size: cover;

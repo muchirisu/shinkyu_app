@@ -120,9 +120,7 @@
       opacity: 1;
     }
   }
-
 }
-
 
 @media (min-width: 751px) {
   .newuser-tabs a {
@@ -147,6 +145,7 @@
 .newuser-tabs li.active a {
   background-color: $color-cream;
 }
+
 
 // user_type:1の時はdisplay:none;
 #hide-text {
