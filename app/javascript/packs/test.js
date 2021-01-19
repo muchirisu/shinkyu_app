@@ -1,10 +1,10 @@
 $(document).on("turbolinks:load", function () {
   $('#type-shinkyu').on('click', function () {
-    $('#hide-text').show();
+    $('#hide-text').slideDown();
   });
 
   $('#type-user').on('click', function () {
-    $('#hide-text').hide();
+    $('#hide-text').slideUp();
   });
 
   $('#menu-btn').on('click', function () {
@@ -17,6 +17,11 @@ $(document).on("turbolinks:load", function () {
       $("#menu-conts").slideUp();
     }
   });
+
+  $('#search-area').on('click', function () {
+    $('#search-conts').slideToggle();
+  });
+
 });
 
 
