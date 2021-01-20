@@ -2,7 +2,7 @@
   <div class="container">
     <div class="newuser">
       <img src="<%= "/newuser_images/#{@newuser.image}" %>" alt="ユーザー画像">
-      <h2><%= @newuser.name %></h2>
+      <p><%= @newuser.name %></p>
       <% if @current_newuser.present?&& @newuser.id == @current_newuser.id %>
         <%= link_to("ユーザー情報編集", "/newusers/#{@newuser.id}/edit") %>
       <% end %>
