@@ -25,7 +25,8 @@
       <%= @newlikes_count %>
 
 
-      <% if @current_newuser.present? && @current_newuser == @newpost.newuser_id %>
+      <%# <% if @current_newuser.present? && @current_newuser == @newpost.newuser_id %> 
+      <% if @current_newuser.present? && @current_newuser.id == @newpost.newuser_id %>
         <div class="newpost-menus">
           <%= link_to("編集", "/newposts/#{@newpost.id}/edit") %>
           <%= link_to("削除", "/newposts/#{@newpost.id}/destroy", {method: "post"})%>
