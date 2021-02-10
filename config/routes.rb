@@ -16,9 +16,10 @@ Rails.application.routes.draw do
 
   
   # ユーザー編集ページ
+
+  get "newusers/login" => "newusers#login_form"
   post "newusers/login" => "newusers#login"
   post "newusers/logout" => "newusers#logout"
-  get "newusers/login" => "newusers#login_form"
   post "newusers/:id/update" => "newusers#update"
   get "newusers/:id/edit" => "newusers#edit"
   post "newusers/create" => "newusers#create"
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
   get "newusers/:id" => "newusers#show"
   get "newusers/:id/profile" => "newusers#profile"
   get "newusers/:id/likes" => "newusers#likes"
+
   
   
   
@@ -70,14 +72,7 @@ Rails.application.routes.draw do
   post "newposts/:id/update" => "newposts#update"
   post "newposts/:id/destroy" => "newposts#destroy"
   
-# posts===============
-  # get "posts/index" => "posts#index"
-  # get "posts/new" => "posts#new"
-  # get "posts/:id" => "posts#show"
-  # post "posts/create" => "posts#create"
-  # get "posts/:id/edit" => "posts#edit"
-  # post "posts/:id/update" => "posts#update"
-  # post "posts/:id/destroy" => "posts#destroy"
+
   get "/" => "home#top"
 
 # newcomments

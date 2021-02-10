@@ -21,17 +21,7 @@ $(document).on("turbolinks:load", function () {
   $('#search-area').on('click', function () {
     $('#search-conts').slideToggle();
   });
-
 });
-
-
-
-
-
-
-
-
-
 
 
 
