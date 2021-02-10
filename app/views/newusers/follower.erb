@@ -26,9 +26,9 @@
           </div>
           <div class="newpost-right">
             <div class="newpost-name">
-              <%= newuser.name %>
+              <%= link_to(newuser.name, "/newusers/#{newuser.id}") %>
             </div>
-            <div class="newpost-post">
+            <div class="newpost-prefecture">
               <%= newuser.prefecture %>
             </div>
           </div>
