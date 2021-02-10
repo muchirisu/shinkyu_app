@@ -9,10 +9,11 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -29,23 +30,20 @@
           <%# ユーザーがログインしている時 %>
           <% if @current_newuser.present? %>
             <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-menu__link, show-user") %>
-            <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-menu__link, index-user") %>
-            <%= link_to("投稿一覧", "/newposts/index", class: "header-menu__link, index-post") %>
-            <%= button_to "ログアウト", newusers_logout_path, method: :post, class: "header-nav__link, logout" %>
-            <%# <%= link_to 'ログアウト', newusers_logout_path, method: :post %> 
-            <%# <%= link_to("ログアウト", {"/newusers/logout", method: "post"}) %> 
-            <%# class: "header-nav__link, logout",  %>
+            <%= link_to "鍼灸師さん一覧", newusers_index_path, class: "header-menu__link, index-user"  %>
+            <%= link_to "投稿一覧", newposts_index_path, class: "header-menu__link, index-post" %>
+            <%= link_to "ログアウト", newusers_logout_path, class: "header-menu__link, logout", method: :post %>
           <% end %>
         
           <%# user_type==2(鍼灸師さん)がログインしている時 %>
           <% if @current_newuser.present? && @current_newuser.user_type==2 %> 
-            <%= link_to("新規投稿", "/newposts/new", class: "header-menu__link, new-post") %>
+            <%= link_to "新規投稿", newposts_new_path, class: "header-menu__link, new-post" %>
           <% end %>
           
           <%# ログイン状態でない時 %>
           <% if @current_newuser.nil? %> 
-            <%= link_to("新規ユーザー登録", "/newusers/signup", class: "header-menu__link, signup") %>
-            <%= link_to("ログイン", "/newusers/login", class: "header-menu__link, login") %>
+            <%= link_to "新規ユーザー登録", newusers_signup_path, class: "header-menu__link, signup" %>
+            <%= link_to "ログイン", newusers_login_path, class: "header-menu__link, login" %>
           <% end %>
           </li>
         </ul>
@@ -61,20 +59,20 @@
           <li class="header-nav__item">
             <% if @current_newuser.present? %>
               <%= link_to(@current_newuser.name, "/newusers/#{@current_newuser.id}", class: "header-nav__link, show-user") %>
-              <%= link_to("鍼灸師さん一覧", "/newusers/index", class: "header-nav__link, index-user") %>
-              <%= link_to("投稿一覧", "/newposts/index", class: "header-nav__link, index-post") %>
-              <%= link_to("ログアウト", "/newusers/logout", class: "header-nav__link, logout", method: :post) %>
+              <%= link_to "鍼灸師さん一覧", newusers_index_path, class: "header-nav__link, index-user"  %>
+              <%= link_to "投稿一覧", newposts_index_path, class: "header-nav__link, index-post" %>
+              <%= link_to "ログアウト", newusers_logout_path, class: "header-nav__link, logout", method: :post %>
             <% end %>
             
               <%# user_type==2(鍼灸師さん)がログインしている時 %>
             <% if @current_newuser.present? && @current_newuser.user_type==2 %> 
-                <%= link_to("新規投稿", "/newposts/new", class: "header-nav__link, new-post") %>
+                <%= link_to "新規投稿", newposts_new_path, class: "header-nav__link, new-post" %>
             <% end %>
           
             <%# ログイン状態でない時 %>
             <% if @current_newuser.nil? %> 
-              <%= link_to("新規ユーザー登録", "/newusers/signup", class: "header-nav__link, signup") %>
-              <%= link_to("ログイン", "/newusers/login", class: "header-nav__link, login") %>
+              <%= link_to "新規ユーザー登録", newusers_signup_path, class: "header-nav__link, signup" %>
+              <%= link_to "ログイン", newusers_login_path, class: "header-nav__link, login" %>
             <% end %>
           </li>
         </ul>
