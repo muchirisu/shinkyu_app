@@ -1,14 +1,6 @@
 <div class="main newusers-show">
   <div class="container">
-    <div class="newuser">
-      <img src="<%= "/newuser_images/#{@newuser.image}" %>" alt="ユーザー画像">    
-      <p><%= @newuser.name %></p>
-      <%# ログインしているユーザーのみ編集できる %>
-      <% if @current_newuser.present? && @newuser.id == @current_newuser.id %>
-        <%= link_to("ユーザー情報編集", "/newusers/#{@newuser.id}/edit") %>
-      <% end %>
-    </div>
-
+    <%= render 'usertab' %>
     <ul class="newuser-tabs">
       <% if @current_newuser.present? && @current_newuser.user_type==2 %>
         <li><%= link_to("投稿", "/newusers/#{@newuser.id}") %></li>
@@ -18,24 +10,7 @@
         <li class="active"><%= link_to("フォロー中", "/newusers/#{@newuser.id}/following") %></li>
         <li><%= link_to("いいね", "/newusers/#{@newuser.id}/likes") %></li>
     </ul>
-    <% if @current_newuser.present? && @current_newuser.id %>
-      <% @newusers.each do |newuser| %>
-        <div class="newposts-index-item">
-          <div class="newpost-left">
-            <%= link_to image_tag("/newuser_images/pc.jpg", class:"newuser-images"), newuser_path(newuser.id) %>
-          </div>
-          <div class="newpost-right">
-            <div class="newpost-name">
-              <%= link_to(newuser.name, "/newusers/#{newuser.id}") %>
-            </div>
-            <div class="newpost-prefecture">
-              <%= newuser.prefecture %>
-            </div>
-          </div>
-        </div>
-        
-      <% end %>
-    <% end %>
+    <%= render 'followuserindex' %>
   </div>
 </div>
 
