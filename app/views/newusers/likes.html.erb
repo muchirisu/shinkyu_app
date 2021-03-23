@@ -1,13 +1,6 @@
 <div class="main newusers-show">
   <div class="container">
-    <div class="newuser">
-      <img src="<%= "/newuser_images/#{@newuser.image}" %>">    
-      <p><%= @newuser.name %></p>
-      <%# ログインしているユーザーのみ編集できる %>
-      <% if @current_newuser.present? && @newuser.id == @current_newuser.id %>
-        <%= link_to("ユーザー情報編集", "/newusers/#{@newuser.id}/edit") %>
-      <% end %>
-    </div>
+    <%= render 'usertab' %>
 
     <ul class="newuser-tabs">
       <% if @current_newuser.present? && @current_newuser.user_type==2 %>
@@ -17,7 +10,6 @@
       <% end %>
         <li><%= link_to("フォロー中", "/newusers/#{@newuser.id}/following") %></li>
         <li class="active"><%= link_to("いいね", "/newusers/#{@newuser.id}/likes") %></li>
-
     </ul>
 
     <% @newlikes.each do |newlike| %>

@@ -1,16 +1,6 @@
 <div class="main newusers-show">
   <div class="container">
-    <div class="newuser">
-      <img src="<%= "/newuser_images/#{@newuser.image}" %>" alt="ユーザー画像">
-      <p><%= @newuser.name %></p>
-      <% if @current_newuser.present?&& @newuser.id == @current_newuser.id %>
-        <%= link_to("ユーザー情報編集", "/newusers/#{@newuser.id}/edit") %>
-      <% end %>
-      <% if @current_newuser.present? && @newuser.id != @current_newuser.id %>
-        <a href="#" class="btn-follow-big">★フォローする</a>
-      <% end %>
-    </div>
-    
+    <%= render 'usertab' %>
     <ul class="newuser-tabs">
       <% if @current_newuser.present? && @current_newuser.user_type==2 %>
         <li><%= link_to("投稿", "/newusers/#{@newuser.id}") %></li>
